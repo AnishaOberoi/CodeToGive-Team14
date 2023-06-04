@@ -16,6 +16,10 @@ app.get('/admin', (req, res) => {
     console.log("admin");
     res.render('admin.ejs')
 })
+app.get('/survey', (req, res) => {
+    console.log("admin");
+    res.render('survey.ejs')
+})
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
