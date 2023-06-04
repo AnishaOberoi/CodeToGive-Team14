@@ -8,18 +8,7 @@ app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    console.log("homeeeee");
-    res.render('main.ejs')
-})
-app.get('/admin', (req, res) => {
-    console.log("admin");
-    res.render('admin.ejs')
-})
-app.get('/survey', (req, res) => {
-    console.log("admin");
-    res.render('survey.ejs')
-})
+
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
@@ -33,6 +22,30 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
         console.log("error")
         console.log(err)
     })
+
+
+app.get('/', (req, res) => {
+    console.log("homeeeee");
+    res.render('main.ejs')
+})
+app.get('/admin', (req, res) => {
+    console.log("admin");
+    res.render('admin.ejs')
+})
+app.get('/survey', (req, res) => {
+    console.log("admin");
+    res.render('survey.ejs')
+})
 app.listen(8080, () => {
     console.log("Listening!");
+})
+
+const user = require('./models/user.js')
+const ques = require('./models/ques.js')
+// user.create({
+//     survey_data: ["riya verma", "verma@gmail.com", null, "5", "yes"]
+// })
+ques.create({
+    ques_txt: "Tick all the options that, according to you, have a negative impact on health or life.(multiple)",
+    options: ["video games", "junk food", "internet", "caffeine", "alcohol", "nicotine", "tobacco", "cannabis", "hallucinogens", "sedatives", "others"]
 })
