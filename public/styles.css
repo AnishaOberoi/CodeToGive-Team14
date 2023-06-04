@@ -19,7 +19,7 @@ body{
 /* cousel- */
 .section-borders span {
     height: 5px;
-    background: brown;
+    background: #620d0d;
     width: 40px;
     display: inline-block;
     border-radius: 2px;
@@ -65,7 +65,7 @@ body {
 }
 .section-title:after {
 	height: 2px;
-	background-color: brown;
+	background-color: #620d0d;
 	left: 25%;
 	right: 25%;
 }
@@ -74,7 +74,7 @@ body {
 	width: 15px;
 	height: 15px;
 	border: 3px solid #fff;
-	background-color: brown;
+	background-color: #620d0d;
 	left: 50%;
 	transform: translatex(-50%);
 	bottom: -6px;
@@ -133,7 +133,7 @@ body {
 }
 
 .customer-rating i {
-	color: brown;
+	color: #620d0d;
 	position: absolute;
 	top: 10px;
 	right: 5px;
@@ -191,11 +191,13 @@ body {
 	display: inline-block;
 	bottom: 45px;
 	transition: all 0.2s ease-in;
+	margin-right: -60px;
+	margin-left: -60px;
 }
 
 .customer-feedback .owl-nav i {
 	background-color: transparent;
-	color: brown;
+	color: #620d0d;
 	font-size: 25px;
 }
 
@@ -214,35 +216,6 @@ body {
 .customer-feedback .owl-next:hover {
 	right: -20px;
 }
-
-/* DOTS */
-.customer-feedback .owl-dots {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 35px;
-}
-.customer-feedback .owl-dot {
-	display: inline-block;
-}
-
-.customer-feedback .owl-dots .owl-dot span {
-	width: 11px;
-	height: 11px;
-	margin: 0 5px;
-	background: #fff;
-	border: 1px solid brown;
-	display: block;
-	-webkit-backface-visibility: visible;
-	-webkit-transition: all 200ms ease;
-	transition: all 200ms ease;
-	border-radius: 50%;
-}
-
-.customer-feedback .owl-dots .owl-dot.active span {
-	background-color: brown;
-}
-
 /* RESPONSIVE */
 @media screen and (max-width: 767px) {
 	.feedback-slider-item:after {
@@ -337,21 +310,29 @@ html, body {
 .navbar .navbar-brand img {
     height: 50px;
 }
+.nav_top{
+	background-color: rgba(165, 42, 42, 0.347);;
+}
 
 h1, #advantages, #survey{
     margin-top: 50px;
-    color: brown;
+    color: #620d0d;
     font-weight: 1000;
+	
+}
+#points{
+	font-family: "Roboto Slab", serif;
+	font-size: 20px;
 }
 
 /* button css start */
 #survey{
     margin-top: 50px;
-    color: brown;
+    color: #620d0d;
     font-size: larger;
 }
 button {
-    --color: brown;
+    --color: #620d0d;
     font-family: inherit;
     display: inline-block;
     width: 8em;
@@ -395,8 +376,125 @@ button {
    }
    
    button:active:before {
-    background: brown;
-    transition: background 0s;
+    background: #620d0d;
+    transition:  0s;
    }
 /* button css end */
+/* footer start */
+footer{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-flow: row wrap;
+	padding: 50px;
+	color: #ffffff;
+	background-color: rgba(165, 42, 42, 0.347);
+  }
+  
+  .footer-content{
+	margin-right: 1.25em;
+	margin-bottom: 2em;
+  }
+  
+  .footer-content h1{
+	font-size: 1rem;
+	margin-top: -1em;
+	margin-bottom: 1.5em;
+  }
+  
+  .footer-content img{
+	width: 20em;
+	height: 5em;
+	border-radius: 50%;
+	padding-left: 3em;
+	padding-bottom: 1em;
+  }
+  
+  .footer-content p{
+	padding: 0% 15%;
+	color: #ffffff;
+  }
+  
+  .socials a{
+	width: 50px;
+	height: 40px;
+	color: #e7f2f4;
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 12px;
+	font-size: 20px;
+  }
+  /* footer end */
 
+  /* inital button start*/
+.ibutton:hover {
+    background-color: rgba(165, 42, 42, 0.347);
+    color: white;
+}
+
+
+.ibutton{
+	height:6em;
+	width:6em;
+	border-radius: 50%;
+	background-color: rgba(165, 42, 42, 0.347);
+	line-height: -100%;
+	box-shadow: 4px 4px 4px 4px rgba(165, 42, 42, 0.347);
+	
+}
+/*Bounce*/
+@keyframes kreep {
+    0% {-webkit-transform: scale(1.1,.9);
+        transform: scale(1.1,.9);}
+   50% { -webkit-transform: scale(.9,1.1) translateY(-.5rem)}
+   70% { -webkit-transform: scale(1);
+         transform: scale(1);}
+}
+
+h1.kreep {
+  display: inline-block;
+  /*name-duration-function(ease,eas-in,linear)-delay-count-direction */
+  animation: kreep 0.7s ease 1s infinite alternate;
+  margin-left:90%;
+  position: fixed;
+  margin-bottom:-45%;
+}
+
+h1.kreep:hover {
+  animation: none;
+}
+@media screen and (max-width: 700px) {
+	h1.kreep {
+		margin-left:40%;
+  		position:absolute;
+		z-index: 12;
+		margin-bottom: 90px;
+	}
+	#advantages{
+		margin-top: 50%;
+	}
+  }
+    /* inital button end*/
+
+#alertt{
+	position: fixed;
+	z-index: 12;
+	margin-top: 15em;
+	margin-left: 45em;
+	background-color: rgb(165, 42, 42);
+	color: white;
+	padding: 2em;
+}
+@media screen and (max-width: 700px) {
+	#alertt{
+		margin-top: 3em;
+		margin-left: 3em;
+	}
+}
+#h1_alert{
+	color:white
+}
+.hidden{
+	display: none;
+}
+	
