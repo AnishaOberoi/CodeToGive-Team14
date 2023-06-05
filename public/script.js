@@ -136,7 +136,7 @@ function login() {
 }
 
 function survey_redirect() {
-    // window.location.href = "./survey";
+    window.location.href = "./survey";
     console.log("survey");
 }
 document.getElementById("login").addEventListener("click", login);

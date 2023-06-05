@@ -306,7 +306,10 @@ html, body {
   #content {
     height: 100%;
   }
-
+.navbar{
+	font-family: 'Open Sans', sans-serif;
+    font-size: medium;
+}
 .navbar .navbar-brand img {
     height: 50px;
 }
