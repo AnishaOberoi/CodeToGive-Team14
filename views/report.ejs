@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Survey Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+                    </li>
+                    <li id="google_element"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <section class="survey-report">
+        <h1>Survey Report</h1>
+        <div class="export-button">
+            <button id="exportButton">Export to Excel</button>
+        </div>
+
+        <table id="surveyTable">
+            <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Date of Survey</th>
+                    <!-- Add more columns if needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add rows with survey data dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="report.js"></script>
+</html>
