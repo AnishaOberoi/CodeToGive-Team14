@@ -9,12 +9,34 @@ const ques = require('./models/ques.js')
 const crypto = require("crypto");
 const algorithm = "aes-256-cbc";
 const initVector = crypto.randomBytes(16);
-const message = "This is a secret message";
-const Securitykey = crypto.randomBytes(32);
-const cipher = crypto.createCipheriv(algorithm, Securitykey, initVector);
-// let encryptedData = cipher.update(message, "utf-8", "hex");
-// encryptedData += cipher.final("hex");
+const key = crypto.randomBytes(32);
+const iv = crypto.randomBytes(16);
 
+function encrypt(text) {
+    let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(key), iv);
+    let encrypted = cipher.update(text);
+    encrypted = Buffer.concat([encrypted, cipher.final()]);
+    return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
+}
+function decrypt(text) {
+    let iv = Buffer.from(text.iv, 'hex');
+    let encryptedText = Buffer.from(text.encryptedData, 'hex');
+    let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key), iv);
+    let decrypted = decipher.update(encryptedText);
+    decrypted = Buffer.concat([decrypted, decipher.final()]);
+    return decrypted.toString();
+}
+// var hw = encrypt("Welcome to Tutorials Point...")
+// console.log(hw)
+// console.log(decrypt(hw))
+// const message = "A message";
+// let he = message;
+// let hi = Buffer.from(he);
+
+// const Securitykey = crypto.randomBytes(32);
+// const cipher = crypto.createCipheriv(algorithm, Securitykey, initVector);
+// let encryptedData = cipher.update(hi, "utf-8", "hex");
+// encryptedData += cipher.final("hex");
 // console.log("Encrypted message: " + encryptedData);
 
 
@@ -76,10 +98,10 @@ app.post('/survey', urlencodedParser, (req, res) => {
     keys.forEach(key => {
         if (key === "647cd4419731782982ad9882") {
             console.log(values[i]);
-            let x = values[i];
-            let encrypted = cipher.update(x, "utf-8", "hex");
-            encrypted += cipher.final("hex");
-            arr.push([key, encrypted]);
+            var hw = encrypt(values[i]);
+            console.log(hw);
+            console.log(decrypt(hw))
+            arr.push([key, hw.iv, hw.encryptedData]);
             i++;
         } else {
             arr.push([key, values[i]]);
@@ -87,13 +109,17 @@ app.post('/survey', urlencodedParser, (req, res) => {
         }
 
     })
-    console.log(params);
-    // user.create({
-    //     survey_data: arr,
-    //     date: new Date().toLocaleDateString()
-    // })
+    // console.log(params);
+    user.create({
+        survey_data: arr,
+        date: new Date().toLocaleDateString()
+    })
     console.log("post survey--------------------")
-    res.render('after_survey.ejs', { params: params });
+    var helper = { iv: arr[0][1], encryptedData: arr[0][2] };
+    console.log(helper);
+    var name = decrypt(helper);
+
+    res.render('after_survey.ejs', { arr: arr, name });
 })
 
 

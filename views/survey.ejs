@@ -3,12 +3,29 @@
 
 <head>
     <title>Survey Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./survey.css">
 </head>
 
 <body>
-    <div id="header">
+    <div id="wrapper">
+        <div id="content">
+            <!-- <div id="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,157 +37,131 @@
                 </ul>
             </div>
         </nav>
-    </div>
+    </div> -->
+            <nav class="navbar navbar-expand-lg nav_top ">
+
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#" id="logo">
+                        <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt=""
+                            max-width="400" max-height="70" class="d-inline-block align-text-top">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./main.ejs">About Us</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#footer">Contact Us</a>
+                            </li>
 
 
+                        </ul>
+                        <div class="d-flex">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
 
-    <div class="container">
-        <h2>Survey</h2>
-
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-                aria-valuemax="100"></div>
-        </div>
-
-        <form id="surveyForm" action="/survey" method="POST">
-            <% ques.forEach((element, index)=> { %>
-                <p>
-                <div class="question active" id="question1">
-                    <h4>Question <%=(index+1)%>:</h4>
-                    <p>
-                        <%=element.ques_txt%>
-                    </p>
-                    <% if(element.options===null || element.options.length===0){ %>
-                        <input type="text" name="<%=element._id%>" placeholder="Write your Answer..."
-                            class="form-control">
-                        <%}else if(element.multi_correct===true){ %>
+                                    <li id="google_element"></li>
+                                </ul>
+                            </div>
+                            <!-- <span class="nav-item" id="login">
+                                <a class="nav-link active me-2" aria-current="page" href="#">Login</a>
+                            </span> -->
+                        </div>
 
 
-
-                            <% element.options.forEach((choice, index)=> { %>
-                                <% if(choice!=="others" ){%>
-                                    <div>
-                                        <input type="checkbox" id="<%=choice%>" name="<%=choice%>">
-                                        <label for="<%=choice%>">
-                                            <%=choice%>
-                                        </label>
-                                    </div>
-                                    <%}else{%>
-                                        <lable>Others:</lable>
-                                        <input type="text" name="<%=element._id%>" placeholder="Write your Answer..."
-                                            class="form-control">
-                                        <% }%>
-                                            <%}) %>
+                    </div>
+                </div>
+            </nav>
 
 
+            <div class="container">
+                <h2>Survey</h2>
 
-                                                <%} else{%>
-                                                    <% element.options.forEach((choice, index)=> { %>
-                                                        <div>
-                                                            <input type="radio" id="<%=choice%>" name="<%=element._id%>"
-                                                                value="<%=choice%>">
-                                                            <label for="<%=choice%>">
-                                                                <%=choice%>
-                                                            </label>
-                                                        </div>
-                                                        <%}) %>
-                                                            <%} %>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                        aria-valuemax="100"></div>
                 </div>
 
+                <form id="surveyForm" action="/survey" method="POST">
+                    <% ques.forEach((element, index)=> { %>
+                        <p>
+                        <div class="question active" id="question1">
+                            <h4>Question <%=(index+1)%>:</h4>
+                            <p>
+                                <%=element.ques_txt%>
+                            </p>
+                            <% if(element.options===null || element.options.length===0){ %>
+                                <input type="text" name="<%=element._id%>" placeholder="Write your Answer..."
+                                    class="form-control">
+                                <%}else if(element.multi_correct===true){ %>
 
 
-                </p>
-                <%}) %>
+
+                                    <% element.options.forEach((choice, index)=> { %>
+                                        <% if(choice!=="others" ){%>
+                                            <div>
+                                                <input type="checkbox" id="<%=choice%>" name="<%=choice%>">
+                                                <label for="<%=choice%>">
+                                                    <%=choice%>
+                                                </label>
+                                            </div>
+                                            <%}else{%>
+                                                <lable>Others:</lable>
+                                                <input type="text" name="<%=element._id%>"
+                                                    placeholder="Write your Answer..." class="form-control">
+                                                <% }%>
+                                                    <%}) %>
 
 
-                    <!-- <div class="question" id="question2">
-                        <h4>Question 2:</h4>
-                        <p>Enter your pincode?</p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div>
 
-                    <div class="question" id="question3">
-                        <h4>Question 3:</h4>
-                        <p>Do you know what addiction is?</p>
-                        <input type="text" name="answer3" placeholder="Write your Answer..." class="form-control">
-                    </div>
+                                                        <%} else{%>
+                                                            <% element.options.forEach((choice, index)=> { %>
+                                                                <div>
+                                                                    <input type="radio" id="<%=choice%>"
+                                                                        name="<%=element._id%>" value="<%=choice%>">
+                                                                    <label for="<%=choice%>">
+                                                                        <%=choice%>
+                                                                    </label>
+                                                                </div>
+                                                                <%}) %>
+                                                                    <%} %>
+                        </div>
 
-                    <div class="question active" id="question1">
-                        <h4>Question 4:</h4>
-                        <p>Do you feel a sense of dependency or reliance on the substance to function or cope with daily
-                            life?
+
+
                         </p>
-                        <input type="text" name="answer1" placeholder="Write your Answer..." class="form-control">
-                    </div>
+                        <%}) %>
 
-                    <div class="question" id="question2">
-                        <h4>Question 5:</h4>
-                        <p>On a scale of 1 to 5, how likely are you to accept a substance provided by a friend/peer?</p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div>
 
-                    <div class="question" id="question3">
-                        <h4>Question 6:</h4>
-                        <p>If you feel stressed, do you talk to your close friends and have you tried sharing your
-                            problems with
-                            other people?</p>
-                        <input type="text" name="answer3" placeholder="Write your Answer..." class="form-control">
-                    </div>
 
-                    <div class="question" id="question2">
-                        <h4>Question 7:</h4>
-                        <p>Have you experienced difficulties in controlling yourself or do you feel compelled or driven
-                            to
-                            engage in any activity even when you don't want to? Yes/No?</p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div>
-
-                    <div class="question" id="question2">
-                        <h4>Question 8:</h4>
-                        <p>Do you know of any people who may be interested in these substances or have you seen people
-                            around
-                            you indulge in consumption of such substances?</p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div>
-
-                    <div class="question" id="question2">
-                        <h4>Question 9:</h4>
-                        <p>Optional: would you be willing to undergo counseling to help with addiction, or do you know
-                            of
-                            someone who is in need of counseling to help overcome addiction. (If yes, please enter your
-                            contact
-                            details and preferred timings to help us reach out to you)
-                            ?</p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div>
-
-                    <div class="question" id="question2">
-                        <h4>Question 10:</h4>
-                        <p>Will you be willing to volunteer to help people who suffer with the problem of substance
-                            abuse? (If
-                            yes, please enter your contact details and preferred timings to help us reach out to you)?
-                        </p>
-                        <input type="text" name="answer2" placeholder="Write your Answer..." class="form-control">
-                    </div> -->
-
-                    <div class="d-flex justify-content-between mt-4">
-                        <button type="button" class="btn btn-primary" id="prevBtn"
-                            onclick="prevQuestion()">Previous</button>
-                        <button type="button" class="btn btn-primary" id="nextBtn"
-                            onclick="nextQuestion()">Next</button>
-                        <input type="submit" class="btn btn-success" id="submitBtn" value="Submit"
-                            style="display: none;">
-                    </div>
-        </form>
+                            <div class="d-flex justify-content-between mt-4">
+                                <button type="button" class="btn btn-primary" id="prevBtn"
+                                    onclick="prevQuestion()">Previous</button>
+                                <button type="button" class="btn btn-primary" id="nextBtn"
+                                    onclick="nextQuestion()">Next</button>
+                                <input type="submit" class="btn btn-success" id="submitBtn" value="Submit"
+                                    style="display: none;">
+                            </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <script src="./survey.js"></script>
-    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
-    <script>
-        function loadGoogleTranslate() {
-            new google.translate.TranslateElement("google_element")
-        }
-    </script>
+    <%- include('partials/footer') %>
+        <script src="./survey.js"></script>
+        <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        <script>
+            function loadGoogleTranslate() {
+                new google.translate.TranslateElement("google_element")
+            }
+        </script>
 </body>
 
 </html>

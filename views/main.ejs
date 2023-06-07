@@ -25,199 +25,178 @@
 <body>
     <div id="wrapper">
         <div id="content">
-            <nav class="navbar navbar-expand-lg nav_top ">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#" id="logo">
-                        <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt=""
-                            max-width="400" max-height="70" class="d-inline-block align-text-top">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#about_rr">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#footer">Contact Us</a>
-                            </li>
+            <%- include('partials/navbar') %>
 
 
-                        </ul>
-                        <div class="d-flex">
-                            <span class="nav-item" id="login">
-                                <a class="nav-link active me-2" aria-current="page" href="#">Login</a>
-                            </span>
+                <div id="alertt" class="hidden">
+                    <h1 id="h1_alert">Alert! Only Admin</h1>
+                    <form id="form">
+                        <div class="mb-3">
+
+                            <label for="exampleInputPassword1" class="form-label">Enter Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                         </div>
+                        <input type="submit" id="okbtn" class="btn btn-light ok" value="OK" class="btn" />
+                    </form>
 
-
-                    </div>
-                </div>
-            </nav>
-
-
-            <div id="alertt" class="hidden">
-                <h1 id="h1_alert">Alert! Only Admin</h1>
-                <form id="form">
-                    <div class="mb-3">
-
-                        <label for="exampleInputPassword1" class="form-label">Enter Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                    </div>
-                    <input type="submit" id="okbtn" class="btn btn-light ok" value="OK" class="btn" />
-                </form>
-
-            </div>
-
-            <h1 class="kreep" id="kreep">
-                <button class="ibutton ibutton5" id="ibutton"><b>Take a <br>Survey</b></button>
-            </h1>
-
-            <section class="container">
-                <h1 id="advantages">WHY TO TAKE A SURVEY</h1>
-                <ul id="points">
-
-                    <li><b>Help yourself: </b> Identify any of the behaviors, habits or thoughts that have a negative
-                        impact on your life.</li>
-                    <li><b>Support:</b> You always have a connection with someone who truly cares about helping you and
-                        you are not alone in this journey.
-                    </li>
-                    <li><b>Strengthening and repairing relationships: </b> You can get advice on creating new and
-                        healthy relationships, which is an essential part of a successful recovery.</li>
-                </ul>
-            </section>
-
-
-            <div id="about_rr" class="container">
-
-                <h1 class="container" id="about_h1">ABOUT US</h1>
-
-                <h3>BREADS - Bangalore Rural Educational and Development Society is the
-                    Development Organization of the Salesian Province of Bangalore. We assist and
-                    promote
-                    the
-                    development
-                    activities of NGOs, particularly the Don Bosco partners in Karnataka and Kerala.
-                    Children,
-                    young
-                    people
-                    and women have been the main target group of all our projects and programmes, as we
-                    believe
-                    that
-                    they
-                    are the most vulnerable and subject to abuse, neglect and exploitation.</h3>
-                <div id="about">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81ocPLgI5D3d-Lp8vr5vagpTiWB7QjTfZp_qcEzj0Y23XqXIyPLN5r6rwHrr224l4NF-y-4AvsQIQHbN80cwqpFbMYW6xw=s2560"
-                        id="about_img">
                 </div>
 
-            </div>
+                <h1 class="kreep" id="kreep">
+                    <button class="ibutton ibutton5" id="ibutton"><b>Take a <br>Survey</b></button>
+                </h1>
+
+                <section class="container">
+                    <h1 id="advantages">WHY TO TAKE A SURVEY</h1>
+                    <ul id="points">
+
+                        <li><b>Help yourself: </b> Identify any of the behaviors, habits or thoughts that have a
+                            negative
+                            impact on your life.</li>
+                        <li><b>Support:</b> You always have a connection with someone who truly cares about helping you
+                            and
+                            you are not alone in this journey.
+                        </li>
+                        <li><b>Strengthening and repairing relationships: </b> You can get advice on creating new and
+                            healthy relationships, which is an essential part of a successful recovery.</li>
+                    </ul>
+                </section>
 
 
-            <section class="container">
-                <h3 id="advantages">ADVANTAGES OF ADDICTION RECOVERY</h3>
-                <ul>
-                    <li>Increased energy and alertness.</li>
-                    <li>Improved sleep routine and insomnia.</li>
-                    <li>Increased time to do the things you love.</li>
-                    <li>Better health.</li>
-                    <li>Enhanced immune system.</li>
-                    <li>Rediscover yourself.</li>
-                </ul>
-            </section>
+                <div id="about_rr" class="container">
+
+                    <h1 class="container" id="about_h1">ABOUT US</h1>
+
+                    <h3>BREADS - Bangalore Rural Educational and Development Society is the
+                        Development Organization of the Salesian Province of Bangalore. We assist and
+                        promote
+                        the
+                        development
+                        activities of NGOs, particularly the Don Bosco partners in Karnataka and Kerala.
+                        Children,
+                        young
+                        people
+                        and women have been the main target group of all our projects and programmes, as we
+                        believe
+                        that
+                        they
+                        are the most vulnerable and subject to abuse, neglect and exploitation.</h3>
+                    <div id="about">
+                        <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81ocPLgI5D3d-Lp8vr5vagpTiWB7QjTfZp_qcEzj0Y23XqXIyPLN5r6rwHrr224l4NF-y-4AvsQIQHbN80cwqpFbMYW6xw=s2560"
+                            id="about_img">
+                    </div>
+
+                </div>
+
+
+                <section class="container">
+                    <h3 id="advantages">ADVANTAGES OF ADDICTION RECOVERY</h3>
+                    <ul>
+                        <li>Increased energy and alertness.</li>
+                        <li>Improved sleep routine and insomnia.</li>
+                        <li>Increased time to do the things you love.</li>
+                        <li>Better health.</li>
+                        <li>Enhanced immune system.</li>
+                        <li>Rediscover yourself.</li>
+                    </ul>
+                </section>
 
 
 
 
 
-            <section>
-                <div class="customer-feedback">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="section-title">
-                                <h2>Success Stories</h2>
+                <section>
+                    <div class="customer-feedback">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="section-title">
+                                    <h2>Success Stories</h2>
 
-                                <div class="section-borders">
-                                </div>
-                                <div class="section-borders">
-                                    <span></span>
-                                    <span class="black-border"></span>
-                                    <span></span>
-                                </div>
-                                <div class="container">
-                                    <div class="row" style="display:flex;align-items: center;">
-                                        <div class="col-md-6 offset-md-3 offset-sm-2 col-sm-8">
-                                            <div class="owl-carousel feedback-slider">
+                                    <div class="section-borders">
+                                    </div>
+                                    <div class="section-borders">
+                                        <span></span>
+                                        <span class="black-border"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row" style="display:flex;align-items: center;">
+                                            <div class="col-md-6 offset-md-3 offset-sm-2 col-sm-8">
+                                                <div class="owl-carousel feedback-slider">
 
-                                                <!-- slider item -->
-                                                <div class="feedback-slider-item">
-                                                    <h3 class="customer-name">Shiven</h3>
-                                                    <p>I have been happy, sober, and productive for 1,534 or four years
-                                                        and 73 days, now. My name is Shiven (23) and my recovery journey
-                                                        started when I was just turning 19. Up until that point my
-                                                        choice of addictions included marijuana, alcohol, pornography,
-                                                        as well as suicidal and self-harm tendencies. It has not been an
-                                                        easy journey but one that I can now look back on and proudly say
-                                                        — I survived.
-                                                    </p>
-                                                    <a href="https://www.thebetterindia.com/247462/addiction-shiven-marijuana-pills-depression-suicide-self-harm-relationship-counsellor-help-de-addiction-center-vid01/
+                                                    <!-- slider item -->
+                                                    <div class="feedback-slider-item">
+                                                        <h3 class="customer-name">Shiven</h3>
+                                                        <p>I have been happy, sober, and productive for 1,534 or four
+                                                            years
+                                                            and 73 days, now. My name is Shiven (23) and my recovery
+                                                            journey
+                                                            started when I was just turning 19. Up until that point my
+                                                            choice of addictions included marijuana, alcohol,
+                                                            pornography,
+                                                            as well as suicidal and self-harm tendencies. It has not
+                                                            been an
+                                                            easy journey but one that I can now look back on and proudly
+                                                            say
+                                                            — I survived.
+                                                        </p>
+                                                        <a href="https://www.thebetterindia.com/247462/addiction-shiven-marijuana-pills-depression-suicide-self-harm-relationship-counsellor-help-de-addiction-center-vid01/
                                                     " style="color:rgba(0, 0, 255, 0.666)">Read More...</a>
 
-                                                </div>
-                                                <!-- /slider item -->
+                                                    </div>
+                                                    <!-- /slider item -->
 
-                                                <!-- slider item -->
-                                                <div class="feedback-slider-item">
+                                                    <!-- slider item -->
+                                                    <div class="feedback-slider-item">
 
-                                                    <h3 class="customer-name">Samriddhi</h3>
-                                                    <p>Samriddhi Bharghav, a 22 year old young Indian is far from the
-                                                        typical average Indian society makes of you. She has battled
-                                                        drug abuse and survived suicide and this is her journey of
-                                                        blooming out of the cocoon she once thought she was trapped in
-                                                        forever.
-                                                    </p>
-                                                    <a href="https://www.wetheyoung.in/struggling-to-get-over-drug-addiction-this-story-is-just-for-you/
+                                                        <h3 class="customer-name">Samriddhi</h3>
+                                                        <p>Samriddhi Bharghav, a 22 year old young Indian is far from
+                                                            the
+                                                            typical average Indian society makes of you. She has battled
+                                                            drug abuse and survived suicide and this is her journey of
+                                                            blooming out of the cocoon she once thought she was trapped
+                                                            in
+                                                            forever.
+                                                        </p>
+                                                        <a href="https://www.wetheyoung.in/struggling-to-get-over-drug-addiction-this-story-is-just-for-you/
                                                     " style="color:rgba(0, 0, 255, 0.666)">Read More...</a>
 
-                                                </div>
-                                                <!-- /slider item -->
+                                                    </div>
+                                                    <!-- /slider item -->
 
-                                                <!-- slider item -->
-                                                <div class="feedback-slider-item">
+                                                    <!-- slider item -->
+                                                    <div class="feedback-slider-item">
 
-                                                    <h3 class="customer-name">Siddharth</h3>
-                                                    <p>“What’s it like being sober? I’ve been sober for 13 and a half
-                                                        years and I can say it’s the reason I’m happy today. It’s the
-                                                        reason I’m grateful today. For my family who has loved me
-                                                        through my best and my worst and in fact loved me harder when I
-                                                        was so difficult to love. For the hundreds of second chances I
-                                                        got,” he shares.
+                                                        <h3 class="customer-name">Siddharth</h3>
+                                                        <p>“What’s it like being sober? I’ve been sober for 13 and a
+                                                            half
+                                                            years and I can say it’s the reason I’m happy today. It’s
+                                                            the
+                                                            reason I’m grateful today. For my family who has loved me
+                                                            through my best and my worst and in fact loved me harder
+                                                            when I
+                                                            was so difficult to love. For the hundreds of second chances
+                                                            I
+                                                            got,” he shares.
 
-                                                    </p>
-                                                    <a href="https://homegrown.co.in/homegrown-explore/musician-siddharth-basrur-opens-up-about-his-battle-with-addiction"
-                                                        style="color:rgba(0, 0, 255, 0.666)">Read More...</a>
+                                                        </p>
+                                                        <a href="https://homegrown.co.in/homegrown-explore/musician-siddharth-basrur-opens-up-about-his-battle-with-addiction"
+                                                            style="color:rgba(0, 0, 255, 0.666)">Read More...</a>
 
-                                                </div>
-                                                <!-- /slider item -->
-
-
-
-                                            </div><!-- /End feedback-slider -->
+                                                    </div>
+                                                    <!-- /slider item -->
 
 
 
-                                        </div><!-- /End col -->
-                                    </div><!-- /End row -->
-                                </div>
-                            </div><!-- /End container -->
-                        </div><!-- /End customer-feedback -->
-            </section>
+                                                </div><!-- /End feedback-slider -->
+
+
+
+                                            </div><!-- /End col -->
+                                        </div><!-- /End row -->
+                                    </div>
+                                </div><!-- /End container -->
+                            </div><!-- /End customer-feedback -->
+                </section>
 
 
 
@@ -226,41 +205,22 @@
         </div>
     </div>
 
-    <footer id="footer" class="footer-section">
-        <div class="footer-content">
-            <p> &ensp;&ensp;&ensp;&ensp;&ensp;</p>
-            <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt="" max-width="400"
-                max-height="70">
-            <!-- <h1>BREADS BANGALORE</h1> -->
-            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat consectetur? Quas quo possimus
-                eius.</p> -->
-            <div class="socials">
-                <a href="https://www.facebook.com/breadsbangalore.org/" class="fa fa-facebook"
-                    style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                <a href="https://www.youtube.com/channel/UC5mMJjSpsrdIMEInAk7dfHw" class="fa fa-youtube"
-                    style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                <a href="https://twitter.com/donboscobreads" class="fa fa-twitter"
-                    style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                <a href="https://in.linkedin.com/in/breads-bangalore-a45543aa" class="fa fa-linkedin"
-                    style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-            </div>
-        </div>
-    </footer>
+    <%- include('partials/footer') %>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </body>
 
 
