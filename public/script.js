@@ -121,16 +121,23 @@ function login() {
     alertmsg.classList.remove('hidden');
 
 
-    form.addEventListener('submit', function (e) {
-        alertmsg.classList.add('hidden');
-        survey.classList.remove('hidden');
-        e.preventDefault();
-        var sign = document.getElementById('exampleInputPassword1').value;
-        if (sign === "breads") {
-            window.location.href = "./admin";
-        }
+    // form.addEventListener('submit', function (e) {
+    //     alertmsg.classList.add('hidden');
+    //     survey.classList.remove('hidden');
+    //     var nn = document.getElementById('exampleInputPassword1').value;
+    //     var sign = document.getElementById('exampleInputUsername').value;
+    //     var username = ["admin1", "admin2", "admin3"];
+    //     var pass = ["breads", "breads", "breads"];
+    // var x = username.indexOf(sign);
+    // // console.log(sign, nn, x);
+    // if (x !== -1 && pass[x] === nn) {
+    //     // console.log("hi");
+    //     window.location.href = "./admin";
+    // }
 
-    });
+
+
+    // });
 
 
 }

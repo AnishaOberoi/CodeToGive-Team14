@@ -2,7 +2,13 @@
 body{
 	margin: auto;
 }
-
+.login_border{
+	padding: 0.5em;
+	border: 1px solid #620d0d;
+	border-radius: 10%;
+	color: white;
+	background-color: #620d0d;
+}
 #about_img{
 	width: 1000px;
 	height: 400px;

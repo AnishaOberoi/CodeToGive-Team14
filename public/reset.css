@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); */
+/* body{
+    
+    font-family: "Roboto Slab", serif;
+} */
 
-.wrapper{
-    background-color: rgb(85, 116, 227);
+.wrapper1{
+    background-color: white;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -16,9 +14,9 @@
     align-items: center;
 }
 
-.container{
+.container1{
     width: 500px;
-    background-color: white;
+    background-color: rgba(165, 42, 42, 0.347);
     padding: 30px;
     border-radius: 16px;
     background-color: black 0px 4px 12px;
@@ -28,9 +26,9 @@
 }
 
 .title{
-    color: rgb(21, 17, 17);
+    color: #620d0d;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 10px;
     text-align: center;
@@ -80,7 +78,7 @@
 
 .submit-btn{
     width: 100%;
-    background-color: rgba(0, 115, 255, 0.73);
+    background-color: #620d0d;
     border: 1px solid transparent;
     border-radius: 8px;
     font-size: 16px;
@@ -128,4 +126,7 @@
     .input-group input {
         padding-left: 26px;
     }
+}
+.socials a{
+    color:#620d0d;
 }
