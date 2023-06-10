@@ -93,7 +93,8 @@ app.get('/admin', (req, res) => {
         ans = pdata
         console.log(ans);
         var volyes = 0;
-        var no = 0;
+        var colyes = 0;
+        var know = 0;
         var total = ans.length;
         console.log(total);
         var pincode = {};
@@ -109,6 +110,17 @@ app.get('/admin', (req, res) => {
                         volyes++;
                     }
                 }
+                if (uarr[0] === "64804b8e9db806247b9ec744") {
+                    if (uarr[1] === "Yes") {
+                        colyes++;
+                    }
+                }
+                if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
+                    if (uarr[1] === "yes") {
+                        know++;
+                    }
+                }
+
                 if (uarr[0] === "647cd475f22afe1044988277") {
                     var x = Object.keys(pincode);
 
@@ -159,8 +171,8 @@ app.get('/admin', (req, res) => {
         var addclouda = Object.keys(addcloud);
         var addcloudafreq = Object.values(addcloud);
         console.log(addclouda, addcloudafreq);
-
-        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq });
+        console.log(colyes, know);
+        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know });
 
 
     })
