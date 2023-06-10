@@ -109,7 +109,7 @@ app.get('/admin', (req, res) => {
                     }
                 })
             })
-            res.render('admin.ejs', { yes: yes, no: no, total: total, flag: 0 });
+            res.render('d-index.ejs', { yes: yes, no: no, total: total, flag: 0 });
 
 
         })
