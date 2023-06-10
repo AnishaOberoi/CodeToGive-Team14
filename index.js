@@ -146,8 +146,8 @@ app.post('/reset', urlencodedParser, (req, res) => {
         res.render("reset.ejs", { flag: 2 });
     }
 })
-app.get('/d_index', (req, res) => {
-    res.render("d_index.ejs");
+app.get('/d-index', (req, res) => {
+    res.render("d-index.ejs");
 })
 
 app.get('/report', (req, res) => {
