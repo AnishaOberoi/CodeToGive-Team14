@@ -170,9 +170,11 @@ app.get('/admin', (req, res) => {
         var pinfreq = Object.values(pincode);
         var addclouda = Object.keys(addcloud);
         var addcloudafreq = Object.values(addcloud);
+        var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
+        console.log(sumFreq);
         console.log(addclouda, addcloudafreq);
         console.log(colyes, know);
-        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know });
+        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know, sumFreq });
 
 
     })
