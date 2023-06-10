@@ -202,15 +202,6 @@
           </div>
 
           <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <!-- Search -->
-            <div class="navbar-nav align-items-center">
-              <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                  aria-label="Search..." />
-              </div>
-            </div>
-            <!-- /Search -->
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <!-- Place this tag where you want the button to render. -->
@@ -453,9 +444,9 @@
                             </div>
                           </div>
                         </div>
-                        <span class="d-block mb-1">No. of people who could be under peer pressure</span>
-                        <h3 class="card-title text-nowrap mb-2">2,456</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +14.82%</small>
+                        <span class="d-block mb-1">No. of people who know about addiction</span>
+                        <h3 class="card-title text-nowrap mb-2"><%= know%></h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> </small>
                       </div>
                     </div>
                   </div>
@@ -479,9 +470,9 @@
                             </div>
                           </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">No. of people recovered</span>
-                        <h3 class="card-title mb-2">10,857</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                        <span class="fw-semibold d-block mb-1">No. of people who have taken counselling</span>
+                        <h3 class="card-title mb-2"><%=colyes %></h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> </small>
                       </div>
                     </div>
                   </div>
@@ -534,7 +525,8 @@
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                       <div class="d-flex flex-column align-items-center gap-1">
-                        <h2 class="mb-2">8,258</h2>
+                      
+                        <h2 class="mb-2"><%= sumFreq %></h2>
 
                       </div>
                       <div id="orderStatisticsChart"></div>
@@ -550,7 +542,7 @@
                             <small class="text-muted">Mobile, Laptop, TV</small>
                           </div>
                           <div class="user-progress">
-                            <small class="fw-semibold">500</small>
+                            <small class="fw-semibold"><%= addfreq[0] %></small>
                           </div>
                         </div>
                       </li>
@@ -564,7 +556,7 @@
 
                           </div>
                           <div class="user-progress">
-                            <small class="fw-semibold">1200</small>
+                            <small class="fw-semibold"><%= addfreq[1] %></small>
                           </div>
                         </div>
                       </li>
@@ -579,7 +571,7 @@
 
                           </div>
                           <div class="user-progress">
-                            <small class="fw-semibold">5000</small>
+                            <small class="fw-semibold"><%= addfreq[2] %></small>
                           </div>
                         </div>
                       </li>
@@ -593,7 +585,7 @@
                             <small class="text-muted">Vape, Ciggarettes</small>
                           </div>
                           <div class="user-progress">
-                            <small class="fw-semibold">2400</small>
+                            <small class="fw-semibold"><%= addfreq[3] %></small>
                           </div>
                         </div>
                       </li>
@@ -662,19 +654,25 @@
                   </div>
                   <div class="card-body">
                     <ul class="p-0 m-0">
-                      <li class="d-flex mb-4 pb-1">
+                      <% for(var i=0; i<addclouda.length; i++){ %> 
+                        <li class="d-flex mb-4 pb-1">
 
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Cocaine</h6>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+  
+                              <h5 class="mb-0"><%=addclouda[i]%></h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h5 class="mb-0"><%=addcloudafreq[i]%></h5>
+  
+                            </div>
                           </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">350</h5>
-
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                      <% }%>
+                      
+                        
+                      
+                      <!--
                       <li class="d-flex mb-4 pb-1">
 
                         <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -740,6 +738,7 @@
                           </div>
                         </div>
                       </li>
+                    -->
                     </ul>
 
                   </div>
