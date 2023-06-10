@@ -97,6 +97,9 @@ app.get('/admin', (req, res) => {
         var total = ans.length;
         console.log(total);
         var pincode = {};
+        var addcloud = {};
+        var add = ["Electronics", "Alcohol", "Drugs", "Nicotine"];
+        var addfreq = [0, 0, 0, 0];
         ans.forEach(users => {
             var surveydata = users.survey_data;
 
@@ -120,14 +123,44 @@ app.get('/admin', (req, res) => {
                     }
 
                 }
+                if (uarr[0] === "video games" || uarr[0] === "internet") {
+                    addfreq[0]++;
+                }
+                if (uarr[0] === "alcohol") {
+                    addfreq[1]++;
+                }
+                if (uarr[0] === "hallucinogens" || uarr[0] === "sedatives" || uarr[0] === "cannabis") {
+                    addfreq[2]++;
+                }
+                if (uarr[0] === "nicotine") {
+                    addfreq[3]++;
+                }
+                if (uarr[0] === "6480479658c660399aa8ea4f") {
+                    var x2 = Object.keys(addcloud);
+
+                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                        var text = uarr[1].toLowerCase();
+                        text = text.charAt(0).toUpperCase() + text.slice(1);
+                        if (x2.indexOf(text) === -1) {
+                            let p2 = text;
+                            addcloud[p2] = 1;
+                        } else {
+                            let p2 = text;
+                            addcloud[p2] = addcloud[p2] + 1;
+                        }
+                    }
+
+                }
 
             })
         })
         var pin = Object.keys(pincode);
         var pinfreq = Object.values(pincode);
+        var addclouda = Object.keys(addcloud);
+        var addcloudafreq = Object.values(addcloud);
+        console.log(addclouda, addcloudafreq);
 
-        console.log(pin, pinfreq);
-        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq });
+        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq });
 
 
     })
