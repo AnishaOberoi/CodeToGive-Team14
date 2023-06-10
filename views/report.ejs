@@ -59,7 +59,49 @@
                     </div>
                 </div>
             </nav>
+            
+            <section class="All-report">
+                <h1>All Users Report</h1>
+                <div class="Allexport-button">
+                    <button id="AllexportButton">Export to Excel</button>
+                </div>
 
+                <table id="AllTable">
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Timings</th>
+                            <!-- Add more columns if needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% i=1; %>
+                            <%All.forEach(function (survey) { %>
+
+                                <tr>
+                                    <td>
+                                        <%=i%>
+                                            <%i=i+1%>
+                                    </td>
+                                    <%Object.values(survey).forEach(function (value) {%>
+                                        <td>
+                                            <%=value%>
+                                        </td>
+                                        <% });%>
+                                </tr>
+
+                                <%});%>
+                                    <!-- Add rows with survey data dynamically using JavaScript -->
+
+                    </tbody>
+                </table>
+
+
+            </section>
+            
+            
             <section class="volunteer-report">
                 <h1>Volunteer</h1>
                 <div class="volunteerexport-button">
