@@ -100,7 +100,11 @@ app.get('/admin', (req, res) => {
         var pincode = {};
         var addcloud = {};
         var add = ["Electronics", "Alcohol", "Drugs", "Nicotine"];
+        var feel = ["Helpless", "Depressed", "Anxious", "Stressed"];
+        var feelfreq = [0, 0, 0, 0];
         var addfreq = [0, 0, 0, 0];
+        var ageobj = {};
+
         ans.forEach(users => {
             var surveydata = users.survey_data;
 
@@ -135,6 +139,22 @@ app.get('/admin', (req, res) => {
                     }
 
                 }
+                if (uarr[0] === "64847ef11fb117ab8728cd6d") {
+                    var x3 = Object.keys(ageobj);
+                    // console.log(uarr[1] + " age");
+                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                        // console.log(uarr[1] + " age");
+                        if (x3.indexOf(uarr[1]) === -1) {
+                            // console.log(uarr[1] + " age");
+                            let p3 = uarr[1];
+                            ageobj[p3] = 1;
+                        } else {
+                            let p3 = uarr[1];
+                            ageobj[p3] = ageobj[p3] + 1;
+                        }
+                    }
+
+                }
                 if (uarr[0] === "video games" || uarr[0] === "internet") {
                     addfreq[0]++;
                 }
@@ -146,6 +166,19 @@ app.get('/admin', (req, res) => {
                 }
                 if (uarr[0] === "nicotine") {
                     addfreq[3]++;
+                }
+
+                if (uarr[0] === "Helpless") {
+                    feelfreq[0]++;
+                }
+                if (uarr[0] === "Depressed") {
+                    feelfreq[1]++;
+                }
+                if (uarr[0] === "Anxious") {
+                    feelfreq[2]++;
+                }
+                if (uarr[0] === "Stressed") {
+                    feelfreq[3]++;
                 }
                 if (uarr[0] === "6480479658c660399aa8ea4f") {
                     var x2 = Object.keys(addcloud);
@@ -170,11 +203,14 @@ app.get('/admin', (req, res) => {
         var pinfreq = Object.values(pincode);
         var addclouda = Object.keys(addcloud);
         var addcloudafreq = Object.values(addcloud);
+        var age = Object.keys(ageobj);
+        var agefreq = Object.values(ageobj);
         var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
         console.log(sumFreq);
         console.log(addclouda, addcloudafreq);
         console.log(colyes, know);
-        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know, sumFreq });
+        console.log(age, agefreq);
+        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know, sumFreq, feel, feelfreq, age, agefreq });
 
 
     })
