@@ -18,7 +18,9 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Home</title>
 </head>
 
@@ -41,11 +43,11 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="#about_rr">About Us</a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="#footer">Contact Us</a>
                                     </li>
@@ -53,9 +55,9 @@
 
                                 </ul>
                                 <div class="d-flex">
-                                    <span class="nav-item" id="login">
+                                    <!-- <span class="nav-item" id="login">
                                         <a class="nav-link active me-2" aria-current="page" href="#">Login</a>
-                                    </span>
+                                    </span> -->
                                 </div>
 
 
@@ -82,237 +84,241 @@
                 </div>
             </div>
         </div>
-
-        <footer id="footer" class="footer-section">
-            <div class="footer-content">
-                <p> &ensp;&ensp;&ensp;&ensp;&ensp;</p>
-                <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt=""
-                    max-width="400" max-height="70">
-                <!-- <h1>BREADS BANGALORE</h1> -->
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat consectetur? Quas quo possimus
-                eius.</p> -->
-                <div class="socials">
-                    <a href="https://www.facebook.com/breadsbangalore.org/" class="fa fa-facebook"
-                        style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                    <a href="https://www.youtube.com/channel/UC5mMJjSpsrdIMEInAk7dfHw" class="fa fa-youtube"
-                        style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                    <a href="https://twitter.com/donboscobreads" class="fa fa-twitter"
-                        style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                    <a href="https://in.linkedin.com/in/breads-bangalore-a45543aa" class="fa fa-linkedin"
-                        style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
-                </div>
-            </div>
-        </footer>
-
-        <style>
-            /* cousel- */
-            .section-borders span {
-                height: 5px;
-                background: #620d0d;
-                width: 40px;
-                display: inline-block;
-                border-radius: 2px;
-            }
-
-            .section-borders span.black-border {
-                background: #333;
-                width: 30px;
-                margin: 0 6px;
-
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            img {
-                max-width: 100%;
-            }
-
-            body {
-                font-family: "Roboto Slab", serif;
-                font-size: 20px;
-                line-height: 1.67;
-                color: #444;
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 28px;
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-                font-weight: 400;
-                display: inline-block;
-                position: relative;
-            }
-
-            .section-title:after,
-            .section-title:before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-            }
-
-            .section-title:after {
-                height: 2px;
-                background-color: #620d0d;
-                left: 25%;
-                right: 25%;
-            }
-
-            .section-title:before {
-                width: 15px;
-                height: 15px;
-                border: 3px solid #fff;
-                background-color: #620d0d;
-                left: 50%;
-                transform: translatex(-50%);
-                bottom: -6px;
-                z-index: 9;
-                border-radius: 50%;
-            }
-
-
-            html,
-            body {
-                margin: 0px;
-                padding: 0px;
-                min-height: 100%;
-                height: 100%;
-            }
-
-            #wrapper1 {
-
-                min-height: 100%;
-                height: auto !important;
-                margin-bottom: -50px;
-                /* the bottom margin is the negative value of the footer's total height */
-            }
-
-            #wrapper1:after {
-                content: "";
-                display: block;
-                height: 30px;
-                /* the footer's total height */
-            }
-
-            #content {
-                height: 100%;
-            }
-
-            .navbar {
-                font-family: 'Open Sans', sans-serif;
-                font-size: medium;
-            }
-
-            .navbar .navbar-brand img {
-                height: 50px;
-            }
-
-            .nav_top {
-                background-color: rgba(165, 42, 42, 0.347);
-                ;
-            }
-
-            h1,
-            #advantages,
-            #survey {
-                margin-top: 50px;
-                color: #620d0d;
-                font-weight: 1000;
-
-            }
-
-            #points {
-                font-family: "Roboto Slab", serif;
-                font-size: 20px;
-            }
-
-
-            /* footer start */
-            footer {
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                flex-flow: row wrap;
-                color: #ffffff;
-                background-color: rgba(165, 42, 42, 0.347);
-                position: absolute;
-                width: 100%;
-            }
-
-            .footer-content {
-                margin-right: 1.25em;
-                margin-bottom: 2em;
-            }
-
-            .footer-content h1 {
-                font-size: 1rem;
-                margin-top: -1rem;
-                padding-top: 2rem;
-
-            }
-
-            .footer-content img {
-                width: 20em;
-                height: 5em;
-                border-radius: 50%;
-                padding-left: 3em;
-                padding-bottom: 1em;
-            }
-
-            .footer-content p {
-                padding: 0% 15%;
-                color: #ffffff;
-            }
-
-            .socials a {
-                width: 50px;
-                height: 40px;
-                color: #e7f2f4;
-                display: inline-block;
-                text-decoration: none;
-                padding: 10px 12px;
-                font-size: 20px;
-            }
-
-            /* footer end */
-
-            /* inital button start*/
-            .ibutton:hover {
-                background-color: rgba(165, 42, 42, 0.347);
-                color: white;
-            }
-
-
-            .ibutton {
-                height: 6em;
-                width: 6em;
-                border-radius: 50%;
-                background-color: rgba(165, 42, 42, 0.347);
-                line-height: -100%;
-                box-shadow: 4px 4px 4px 4px rgba(165, 42, 42, 0.347);
-
-            }
-
-            @media screen and (max-width: 700px) {
-                #alertt {
-                    margin-top: 3em;
-                    margin-left: 3em;
-                }
-            }
-
-            #h1_alert {
-                color: white
-            }
-
-            .hidden {
-                display: none;
-            }
-        </style>
 </body>
+<footer id="footer" class="footer-section">
+    <div class="footer-content">
+        <p> &ensp;&ensp;&ensp;&ensp;&ensp;</p>
+        <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt="" max-width="400"
+            max-height="70">
+        <!-- <h1>BREADS BANGALORE</h1> -->
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat consectetur? Quas quo possimus
+                eius.</p> -->
+        <div class="socials">
+            <a href="https://www.facebook.com/breadsbangalore.org/" class="fa fa-facebook"
+                style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
+            <a href="https://www.youtube.com/channel/UC5mMJjSpsrdIMEInAk7dfHw" class="fa fa-youtube"
+                style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
+            <a href="https://twitter.com/donboscobreads" class="fa fa-twitter"
+                style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
+            <a href="https://in.linkedin.com/in/breads-bangalore-a45543aa" class="fa fa-linkedin"
+                style="font-size:36px;color:#620d0d ;margin-left:10px"></a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* cousel- */
+    .section-borders span {
+        height: 5px;
+        background: #620d0d;
+        width: 40px;
+        display: inline-block;
+        border-radius: 2px;
+    }
+
+    .section-borders span.black-border {
+        background: #333;
+        width: 30px;
+        margin: 0 6px;
+
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    body {
+        font-family: "Roboto Slab", serif;
+        font-size: 20px;
+        line-height: 1.67;
+        color: #444;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        font-weight: 400;
+        display: inline-block;
+        position: relative;
+    }
+
+    .section-title:after,
+    .section-title:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+    }
+
+    .section-title:after {
+        height: 2px;
+        background-color: #620d0d;
+        left: 25%;
+        right: 25%;
+    }
+
+    .section-title:before {
+        width: 15px;
+        height: 15px;
+        border: 3px solid #fff;
+        background-color: #620d0d;
+        left: 50%;
+        transform: translatex(-50%);
+        bottom: -6px;
+        z-index: 9;
+        border-radius: 50%;
+    }
+
+
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+        min-height: 100%;
+        height: 100%;
+    }
+
+    #wrapper1 {
+
+        min-height: 100%;
+        height: auto !important;
+        margin-bottom: -50px;
+        /* the bottom margin is the negative value of the footer's total height */
+    }
+
+    #wrapper1:after {
+        content: "";
+        display: block;
+        height: 30px;
+        /* the footer's total height */
+    }
+
+    #content {
+        height: 100%;
+    }
+
+    .navbar {
+        font-family: 'Open Sans', sans-serif;
+        font-size: medium;
+    }
+
+    .navbar .navbar-brand img {
+        height: 50px;
+    }
+
+    .nav_top {
+        background-color: rgba(165, 42, 42, 0.347);
+        ;
+    }
+
+    h1,
+    #advantages,
+    #survey {
+        margin-top: 50px;
+        color: #620d0d;
+        font-weight: 1000;
+
+    }
+
+    #points {
+        font-family: "Roboto Slab", serif;
+        font-size: 20px;
+    }
+
+
+    /* footer start */
+    footer {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-flow: row wrap;
+        color: #ffffff;
+        background-color: rgba(165, 42, 42, 0.347);
+        position: absolute;
+        width: 100%;
+    }
+
+    .footer-content {
+        margin-right: 1.25em;
+        margin-bottom: 2em;
+    }
+
+    .footer-content h1 {
+        font-size: 1rem;
+        margin-top: -1rem;
+        padding-top: 2rem;
+
+    }
+
+    .footer-content img {
+        width: 20em;
+        height: 5em;
+        border-radius: 50%;
+        padding-left: 3em;
+        padding-bottom: 1em;
+    }
+
+    .footer-content p {
+        padding: 0% 15%;
+        color: #ffffff;
+    }
+
+    .socials a {
+        width: 50px;
+        height: 40px;
+        color: #e7f2f4;
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 12px;
+        font-size: 20px;
+    }
+
+    /* footer end */
+
+    /* inital button start*/
+    .ibutton:hover {
+        background-color: rgba(165, 42, 42, 0.347);
+        color: white;
+    }
+
+
+    .ibutton {
+        height: 6em;
+        width: 6em;
+        border-radius: 50%;
+        background-color: rgba(165, 42, 42, 0.347);
+        line-height: -100%;
+        box-shadow: 4px 4px 4px 4px rgba(165, 42, 42, 0.347);
+
+    }
+
+    @media screen and (max-width: 700px) {
+        #alertt {
+            margin-top: 3em;
+            margin-left: 3em;
+        }
+    }
+
+    #h1_alert {
+        color: white
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .container {
+        padding-bottom: 7.5rem;
+    }
+</style>
+
 <script>
 
 </script>

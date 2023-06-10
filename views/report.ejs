@@ -59,61 +59,10 @@
                     </div>
                 </div>
             </nav>
-            
-            <section class="All-report">
-                <h1>All Users Report</h1>
-                <div class="Allexport-button">
-                    <button id="AllexportButton">Export to Excel</button>
-                </div>
-
-                <table id="AllTable">
-                    <thead>
-                        <tr>
-                            <th>S No.</th>
-                            <th>Name</th>
-                            <th>Pincode</th>
-                            <th>Do you Know what addiction is?</th>
-                            <th>Do you experience following feelings?</th>
-                            <th>Dependency on substance</th>
-                            <th>How likely you accept a substance provided by friend?</th>
-                            <th>Feel stressed</th>
-                            <th>Experienced difficulties in controlling yourself?</th>
-                            <th>Do you know any people in these substances?</th>
-                            <th>Contact</th>
-                            <th>Date</th>
-                            <th>Type of Addiction</th>
-                            <th>How likely you are accepting a substance</th>
-                            <th>Willing for Counselling</th>
-                            <th>Willing to Volunteer</th>
-                            <!-- Add more columns if needed -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% i=1; %>
-                            <%All.forEach(function (survey) { %>
-
-                                <tr>
-                                    <td>
-                                        <%=i%>
-                                            <%i=i+1%>
-                                    </td>
-                                    <%Object.values(survey).forEach(function (value) {%>
-                                        <td>
-                                            <%=value%>
-                                        </td>
-                                        <% });%>
-                                </tr>
-
-                                <%});%>
-                                    <!-- Add rows with survey data dynamically using JavaScript -->
-
-                    </tbody>
-                </table>
 
 
-            </section>
-            
-            
+
+
             <section class="volunteer-report">
                 <h1>Volunteer</h1>
                 <div class="volunteerexport-button">
@@ -126,7 +75,7 @@
                             <th>S No.</th>
                             <th>Name</th>
                             <th>Contact</th>
-                            <th>Date</th>
+                            <th>Preffered Timings</th>
                             <!-- Add more columns if needed -->
                         </tr>
                     </thead>
@@ -170,7 +119,7 @@
                             <th>S No.</th>
                             <th>Name</th>
                             <th>Contact</th>
-                            <th>Date</th>
+                            <th>Preffered Timings</th>
                             <!-- Add more columns if needed -->
                         </tr>
                     </thead>
@@ -200,6 +149,83 @@
 
 
             </section>
+
+
+
+
+            <section class="all-report">
+                <h1>All Users Report</h1>
+                <div class="allexport-button">
+                    <button id="allexportButton">Export to Excel</button>
+                </div>
+
+                <table id="allTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Name</th>
+                            <th>Pincode</th>
+                            <th>Know what addiction is</th>
+                            <th>Type of Addiction</th>
+                            <th>Feelings experienced</th>
+                            <th>Dependency on substance</th>
+                            <th>How likely you are accepting a substance</th>
+                            <th>Feel stressed</th>
+                            <th>Experienced difficulties in controlling yourself?</th>
+                            <th>Do you know any people in these substances?</th>
+                            <th>Willing for Counselling</th>
+                            <th>Willing to Volunteer</th>
+                            <th>Contact</th>
+                            <th>Prefered Timings</th>
+                            <th>Date of survey</th>
+
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% i=1; %>
+                            <%all.forEach(function (survey) { %>
+                                <% var keys=Object.keys(survey);%>
+                                    <% var
+                                        heads=["name","pincode","know","add","feel","dependence","scale","stressed","control","others","vol","cou","contact","timings","date"];
+                                        %>
+                                        <% var val=Object.values(survey);%>
+                                            <!-- <%= keys%>
+                                                <%= val%>
+                                                    <%= heads%> -->
+                                            <tr>
+                                                <td>
+                                                    <%=i%>
+                                                        <%i=i+1%>
+
+
+                                                </td>
+                                                <%heads.forEach(function (head) {%>
+                                                    <%if(keys.indexOf(head)==-1){%>
+                                                        <td>
+                                                            <%=""%>
+                                                        </td>
+                                                        <%}else{%>
+                                                            <td>
+                                                                <%=survey[head]%>
+                                                            </td>
+                                                            <%}%>
+
+                                                                <% });%>
+                                            </tr>
+
+                                            <%});%>
+
+                    </tbody>
+                </table>
+
+
+            </section>
+
+
         </div>
     </div>
 </body>

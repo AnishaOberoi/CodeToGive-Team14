@@ -1,9 +1,9 @@
-var AllexportButton = document.getElementById("AllexportButton");
-AllexportButton.addEventListener("click", function () {
-        var workbook=XLSX.utils.table_to_book(document.getElementById("AllTable"), {
-            sheet: "All Users Data"
-        });
-    XLSX.writeFile(workbook, "Allusers_data.xlsx");
+var allexportButton = document.getElementById("allexportButton");
+allexportButton.addEventListener("click", function () {
+    var workbook = XLSX.utils.table_to_book(document.getElementById("allTable"), {
+        sheet: "all Users Data"
+    });
+    XLSX.writeFile(workbook, "allusers_data.xlsx");
 });
 
 var volunteerexportButton = document.getElementById("volunteerexportButton");

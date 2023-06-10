@@ -75,3 +75,32 @@ button {
 .counselexport-button button:hover {
     background-color: #555;
 }
+
+
+
+.all-report {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.allexport-button {
+    display: flex;
+    justify-content: center;
+}
+
+.allexport-button button {
+    background-color: #620d0d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.allexport-button button:hover {
+    background-color: #555;
+}

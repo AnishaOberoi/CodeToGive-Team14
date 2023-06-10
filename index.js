@@ -146,6 +146,9 @@ app.post('/reset', urlencodedParser, (req, res) => {
         res.render("reset.ejs", { flag: 2 });
     }
 })
+app.get('/d_index', (req, res) => {
+    res.render("d_index.ejs");
+})
 
 app.get('/report', (req, res) => {
     console.log("report");
@@ -164,23 +167,30 @@ app.get('/report', (req, res) => {
         var all = [];
         var volunteer = [];
         var counsel = [];
+
         // var name = atob(ans[4].survey_data[0][1]);
         // console.log(name);
         ans.forEach(users => {
             var surveydata = users.survey_data;
             var obj = {};
+            var feel = [];
+            var allobj = {};
             var flag_vol = 0;
             var flag_coul = 0;
+            var add = [];
             surveydata.forEach(uarr => {
                 if (uarr[0] === "647cd4419731782982ad9882") {
                     var name = atob(uarr[1]);
                     obj.name = name;
+                    allobj.name = name;
                 }
                 if (uarr[0] === "648051130d1033015eb9b26f") {
                     obj.contact = uarr[1];
+                    allobj.contact = uarr[1];
                 }
                 if (uarr[0] === "64805584e3198be1fd5a3715") {
                     obj.timings = uarr[1];
+                    allobj.timings = uarr[1];
                 }
                 if (uarr[0] === "64804ba68eef5d647bbc8823" && uarr[1] === "Yes") {
                     flag_vol = 1;
@@ -188,18 +198,116 @@ app.get('/report', (req, res) => {
                 if (uarr[0] === "64804b8e9db806247b9ec744" && uarr[1] === "Yes") {
                     flag_coul = 1;
                 }
+                if (uarr[0] === "647cd475f22afe1044988277") {
+                    allobj.pincode = uarr[1];
+                }
+                if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
+                    allobj.know = uarr[1];
+                }
+                if (uarr[0] === "648049bce18d573fa7188c80") {
+                    allobj.dependence = uarr[1];
+                }
+                if (uarr[0] === "64804a18ed847a0a35abbe15") {
+                    allobj.scale = uarr[1];
+                }
+                if (uarr[0] === "64804b1d8d77d019856e3c30") {
+                    allobj.stressed = uarr[1];
+                }
+                if (uarr[0] === "64804b4899bf34519e7fc271") {
+                    allobj.control = uarr[1];
+                }
+                if (uarr[0] === "64804b66b0c8eb69f0c61cfc") {
+                    allobj.others = uarr[1];
+                }
+
+                if (uarr[0] === "64804ba68eef5d647bbc8823") {
+                    allobj.vol = uarr[1];
+                }
+                if (uarr[0] === "64804ba68eef5d647bbc8823") {
+                    allobj.cou = uarr[1];
+                }
+                if (uarr[0] === "video games") {
+                    add.push("video games");
+                }
+                if (uarr[0] === "junk food") {
+                    add.push("junk food");
+                }
+                if (uarr[0] === "internet") {
+                    add.push("internet");
+                }
+                if (uarr[0] === "caffeine") {
+                    add.push("caffeine");
+                }
+                if (uarr[0] === "alcohol") {
+                    add.push("alcohol");
+                }
+                if (uarr[0] === "nicotine") {
+                    add.push("nicotine");
+                }
+                if (uarr[0] === "tobacco") {
+                    add.push("tobacco");
+                }
+                if (uarr[0] === "cannabis") {
+                    add.push("cannabis");
+                }
+                if (uarr[0] === "hallucinogens") {
+                    add.push("hallucinogens");
+                }
+                if (uarr[0] === "sedatives") {
+                    add.push("sedatives");
+                }
+                if (uarr[0] === "6480479658c660399aa8ea4f") {
+                    add.push(uarr[1]);
+                }
+                if (uarr[0] === "Helpless") {
+                    feel.push("Helpless");
+                }
+                if (uarr[0] === "Vulnerable") {
+                    feel.push("Vulnerable");
+                }
+                if (uarr[0] === "Depressed") {
+                    feel.push("Depressed");
+                }
+                if (uarr[0] === "Alone") {
+                    feel.push("Alone");
+                }
+                if (uarr[0] === "Dejected") {
+                    feel.push("Dejected");
+                }
+                if (uarr[0] === "Anxious") {
+                    feel.push("Anxious");
+                }
+                if (uarr[0] === "Frequent mood swings") {
+                    feel.push("Frequent mood swings");
+                }
+                if (uarr[0] === "Easily triggered") {
+                    feel.push("Easily triggered");
+                }
+                if (uarr[0] === "Stressed") {
+                    feel.push("Stressed");
+                }
+                if (uarr[0] === "6480485bd594afbe9b71c5ed") {
+                    feel.push(uarr[1]);
+                }
+
+
+
 
             });
+            allobj.date = users.date;
+            allobj.feel = feel;
+            allobj.add = add;
             if (flag_vol === 1) {
                 volunteer.push(obj);
             }
             if (flag_coul === 1) {
                 counsel.push(obj);
             }
+            all.push(allobj);
         });
         // console.log(volunteer);
         // console.log(counsel);
-        res.render('report.ejs', { volunteer: volunteer, counsel: counsel });
+        res.render('report.ejs', { volunteer: volunteer, counsel: counsel, all: all });
     });
 
     // res.render('report.ejs');
