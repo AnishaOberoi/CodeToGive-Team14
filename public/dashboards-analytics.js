@@ -15,12 +15,16 @@
   var pinfreq = document.getElementById('div-pinfreq').dataset.pinfreq;
   var add = document.getElementById('div-add').dataset.add;
   var addfreq = document.getElementById('div-addfreq').dataset.addfreq;
+  var feelfreq = document.getElementById('div-feelfreq').dataset.feelfreq;
   console.log(pin, pinfreq);
   var pina = pin.split(",");
   var pinafreq = pinfreq.split(",");
   var adda = add.split(",");
   var addfreqa = addfreq.split(",");
+  var feelfreqa= feelfreq.split(",");
   var addfreqb = [parseInt(addfreqa[0]), parseInt(addfreqa[1]), parseInt(addfreqa[2]), parseInt(addfreqa[3])];
+  var feelfreqb = [parseInt(feelfreqa[0]), parseInt(feelfreqa[1]), parseInt(feelfreqa[2]), parseInt(feelfreqa[3])];
+  
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
@@ -494,6 +498,71 @@
   if (typeof chartOrderStatistics !== undefined && chartOrderStatistics !== null) {
     const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
     statisticsChart.render();
+  }
+  //Feelings Chart
+  const FeelingsStatistics = document.querySelector('#FeelingsChart'),
+    FeelingsChartConfig = {
+      chart: {
+        height: 165,
+        width: 130,
+        type: 'donut'
+      },
+      labels: ['Helpless', 'Depressed', 'Anxious', 'Stressed'],
+      series: feelfreqb,
+      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+      stroke: {
+        width: 5,
+        colors: cardColor
+      },
+      dataLabels: {
+        enabled: false,
+        formatter: function (val, opt) {
+          return parseInt(val) + '%';
+        }
+      },
+      legend: {
+        show: false
+      },
+      grid: {
+        padding: {
+          top: 0,
+          bottom: 0,
+          right: 15
+        }
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: '75%',
+            labels: {
+              show: true,
+              value: {
+                fontSize: '1.5rem',
+                fontFamily: 'Public Sans',
+                color: headingColor,
+                offsetY: -15,
+                formatter: function (val) {
+                  return parseInt(val) + '%';
+                }
+              },
+              name: {
+                offsetY: 20,
+                fontFamily: 'Public Sans'
+              },
+              total: {
+                show: true,
+                fontSize: '0.8125rem',
+                color: axisColor,
+                label: 'Monthly',
+              }
+            }
+          }
+        }
+      }
+    };
+  if (typeof FeelingsStatistics !== undefined && FeelingsStatistics !== null) {
+    const FeelingsChart = new ApexCharts(FeelingsStatistics, FeelingsChartConfig);
+    FeelingsChart.render();
   }
   // Income Chart - Area chart
   // --------------------------------------------------------------------
