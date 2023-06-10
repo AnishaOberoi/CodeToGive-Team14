@@ -286,8 +286,11 @@ app.get('/report', (req, res) => {
                 if (uarr[0] === "64804ba68eef5d647bbc8823") {
                     allobj.vol = uarr[1];
                 }
-                if (uarr[0] === "64804ba68eef5d647bbc8823") {
+                if (uarr[0] === "64804b8e9db806247b9ec744") {
                     allobj.cou = uarr[1];
+                }
+                if (uarr[0] === "64847ef11fb117ab8728cd6d") {
+                    allobj.age = uarr[1];
                 }
                 if (uarr[0] === "video games") {
                     add.push("video games");
@@ -437,7 +440,7 @@ app.listen(PORT, () => {
 //     date: new Date().toLocaleDateString()
 // })
 // ques.create({
-//     ques_txt: "Are you already taking counselling?",
-//     options: ["Yes", "No"],
+//     ques_txt: "Enter your age",
+//     options: ["Below 18", "18-25", "25-40", "Above 40"],
 //     multi_correct: false
 // })
