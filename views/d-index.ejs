@@ -72,7 +72,7 @@
 
           <!-- Layouts -->
           <li class="menu-item">
-            <a href="report" class="menu-link">
+            <a href="report" class="menu-link" target="_blank">
               <i class="menu-icon tf-icons bx bx-layout"></i>
               <div data-i18n="Layouts">Reports</div>
             </a>
@@ -383,21 +383,27 @@
                     <div class="col-md-4">
                       <div class="card-body">
                         <div class="text-center">
-                          <div class="dropdown">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button"
-                              id="growthReportId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              2022
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
-                              <a class="dropdown-item" href="javascript:void(0);">2021</a>
-                              <a class="dropdown-item" href="javascript:void(0);">2020</a>
-                              <a class="dropdown-item" href="javascript:void(0);">2019</a>
-                            </div>
-                          </div>
+                          <h3> AGE </h3>
+                          <% for(var i=0; i<age.length; i++){ %> 
+                            <li class="d-flex mb-4 pb-1">
+    
+                              <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+      
+                                  <h5 class="mb-0"><%=age[i]%></h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                  <h5 class="mb-0"><%=agefreq[i]%></h5>
+      
+                                </div>
+                              </div>
+                            </li>
+                          <% }%>
+                          
+                        </ul>
                         </div>
                       </div>
-                      <div id="growthChart"></div>
-                      <div class="text-center fw-semibold pt-3 mb-2">78% Increase in No. of Surveys</div>
+                      
 
                       <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
                         <div class="d-flex">
@@ -670,75 +676,6 @@
                         </li>
                       <% }%>
                       
-                        
-                      
-                      <!--
-                      <li class="d-flex mb-4 pb-1">
-
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Heroine</h5>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">270</h5>
-
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Weed</h5>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">146</h5>
-
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Vape</h5>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">94</h5>
-
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex mb-4 pb-1">
-
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Hookah</h5>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">83</h5>
-
-                          </div>
-                        </div>
-                      </li>
-                      <li class="d-flex">
-
-                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                          <div class="me-2">
-
-                            <h5 class="mb-0">Shopping</h5>
-                          </div>
-                          <div class="user-progress d-flex align-items-center gap-1">
-                            <h5 class="mb-0">21</h5>
-
-                          </div>
-                        </div>
-                      </li>
-                    -->
                     </ul>
 
                   </div>
