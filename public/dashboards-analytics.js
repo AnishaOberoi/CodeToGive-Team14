@@ -13,11 +13,14 @@
   borderColor = config.colors.borderColor;
   var pin = document.getElementById('div-pin').dataset.pin;
   var pinfreq = document.getElementById('div-pinfreq').dataset.pinfreq;
+  var add=document.getElementById('div-add').dataset.add;
+  var addfreq=document.getElementById('div-addfreq').dataset.addfreq;
   console.log(pin, pinfreq);
   var pina = pin.split(",");
   var pinafreq = pinfreq.split(",");
-
-
+  var adda=add.split(",");
+  var addfreqa=addfreq.split(",");
+  var addfreqb=[parseInt(addfreqa[0]),parseInt(addfreqa[1]),parseInt(addfreqa[2]),parseInt(addfreqa[3])];
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
@@ -436,7 +439,7 @@
         type: 'donut'
       },
       labels: ['Electronic', 'Nicotine', 'Drugs', 'Alcohol'],
-      series: [85, 15, 50, 50],
+      series: addfreqb,
       colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
