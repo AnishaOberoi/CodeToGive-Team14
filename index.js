@@ -85,11 +85,34 @@ app.get('/admin', (req, res) => {
         i = 1;
     })
     console.log("admin");
-    if (i == 1) {
-        res.render('admin.ejs');
-    } else {
+    if (i != 1) {
         res.send("<h1>Bad Request</h1>");
 
+    } else {
+        user.find({}).then(pdata => {
+            ans = pdata
+            console.log(ans);
+            var yes = 0;
+            var no = 0;
+            var total = ans.length;
+            console.log(total);
+            ans.forEach(users => {
+                var surveydata = users.survey_data;
+
+                surveydata.forEach(uarr => {
+                    if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
+                        if (uarr[1] === "yes") {
+                            yes++;
+                        } else if (uarr[1] === "no") {
+                            no++;
+                        }
+                    }
+                })
+            })
+            res.render('admin.ejs', { yes: yes, no: no, total: total, flag: 0 });
+
+
+        })
     }
 
 
