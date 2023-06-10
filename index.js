@@ -79,41 +79,59 @@ app.post('/admin', urlencodedParser, (req, res) => {
 app.get('/admin', (req, res) => {
     // const json = res.json();
 
-    var i = 0;
-    store.each(function (value, key) {
-        console.log(key, '==', value);
-        i = 1;
-    })
-    console.log("admin");
-    if (i != 1) {
-        res.send("<h1>Bad Request</h1>");
+    // var i = 0;
+    // store.each(function (value, key) {
+    //     console.log(key, '==', value);
+    //     i = 1;
+    // })
+    // console.log("admin");
+    // if (i != 1) {
+    //     res.send("<h1>Bad Request</h1>");
 
-    } else {
-        user.find({}).then(pdata => {
-            ans = pdata
-            console.log(ans);
-            var yes = 0;
-            var no = 0;
-            var total = ans.length;
-            console.log(total);
-            ans.forEach(users => {
-                var surveydata = users.survey_data;
+    // } else {
+    user.find({}).then(pdata => {
+        ans = pdata
+        console.log(ans);
+        var volyes = 0;
+        var no = 0;
+        var total = ans.length;
+        console.log(total);
+        var pincode = {};
+        ans.forEach(users => {
+            var surveydata = users.survey_data;
 
-                surveydata.forEach(uarr => {
-                    if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
-                        if (uarr[1] === "yes") {
-                            yes++;
-                        } else if (uarr[1] === "no") {
-                            no++;
+            surveydata.forEach(uarr => {
+                if (uarr[0] === "64804ba68eef5d647bbc8823") {
+                    if (uarr[1] === "Yes") {
+                        volyes++;
+                    }
+                }
+                if (uarr[0] === "647cd475f22afe1044988277") {
+                    var x = Object.keys(pincode);
+
+                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                        if (x.indexOf(uarr[1]) === -1) {
+                            let p = uarr[1];
+                            pincode[p] = 1;
+                        } else {
+                            let p = uarr[1];
+                            pincode[p] = pincode[p] + 1;
                         }
                     }
-                })
+
+                }
+
             })
-            res.render('d-index.ejs', { yes: yes, no: no, total: total, flag: 0 });
-
-
         })
-    }
+        var pin = Object.keys(pincode);
+        var pinfreq = Object.values(pincode);
+
+        console.log(pin, pinfreq);
+        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq });
+
+
+    })
+    // }
 
 
 })
@@ -352,9 +370,13 @@ app.post('/survey', urlencodedParser, (req, res) => {
         date: new Date().toLocaleDateString()
     })
     console.log("post survey--------------------")
+    user.find({}).then(pdata => {
+        ans = pdata
+        console.log(ans);
+        var total = ans.length;
+        res.render('after_survey.ejs', { total });
+    })
 
-    var name = atob(arr[0][1]);
-    res.render('after_survey.ejs', { arr: arr, name });
 })
 
 
@@ -370,7 +392,7 @@ app.listen(PORT, () => {
 //     date: new Date().toLocaleDateString()
 // })
 // ques.create({
-//     ques_txt: " If you are willing to talk or volunteer to help, please enter your preferred timings to help us reach out to you.",
-//     options: null,
+//     ques_txt: "Are you already taking counselling?",
+//     options: ["Yes", "No"],
 //     multi_correct: false
 // })

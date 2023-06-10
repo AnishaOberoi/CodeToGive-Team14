@@ -11,6 +11,13 @@
   headingColor = config.colors.headingColor;
   axisColor = config.colors.axisColor;
   borderColor = config.colors.borderColor;
+  var pin = document.getElementById('div-pin').dataset.pin;
+  var pinfreq = document.getElementById('div-pinfreq').dataset.pinfreq;
+  console.log(pin, pinfreq);
+  var pina = pin.split(",");
+  var pinafreq = pinfreq.split(",");
+
+
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
@@ -20,12 +27,12 @@
       series: [
         {
           name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
+          data: pinafreq
         },
-        {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
-        }
+        // {
+        //   name: '2020',
+        //   data: [-13, -18, -9, -14, -5, -17, -15]
+        // }
       ],
       chart: {
         height: 300,
@@ -79,7 +86,7 @@
         }
       },
       xaxis: {
-        categories: ['686102', '680667', '685501', '679554', '691556', '680751', '670644'],
+        categories: pina,
         labels: {
           style: {
             fontSize: '13px',
@@ -267,7 +274,7 @@
           filter: {
             type: 'none'
           }
-        } 
+        }
       }
     };
   if (typeof totalRevenueChartEl !== undefined && totalRevenueChartEl !== null) {
@@ -615,7 +622,7 @@
             },
             value: {
               formatter: function (val) {
-                return  parseInt(val);
+                return parseInt(val);
               },
               offsetY: 5,
               color: '#697a8d',
