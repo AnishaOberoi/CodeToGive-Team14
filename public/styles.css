@@ -9,6 +9,8 @@ body{
 	border-radius: 10%;
 	color: white;
 	background-color: #620d0d;
+	width: 75px;
+    	text-align: center;
 }
 #about_img{
 	width: 1000px;
@@ -1070,6 +1072,9 @@ h1.kreep:hover {
 	#advantages{
 		margin-top: 50%;
 	}
+	#nav-1{
+    		margin-left: 70px;
+  	}
   }
     /* inital button end*/
 
@@ -1932,4 +1937,7 @@ h1.kreep:hover {
     color: #620d0d;
     font-size: 40px;
     font-weight: bold;
+}
+#navbar-button-1::before{
+    background: transparent;
 }
