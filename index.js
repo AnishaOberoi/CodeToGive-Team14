@@ -483,12 +483,28 @@ app.get('/report', (req, res) => {
 
 
 app.get('/survey', (req, res) => {
-    var qq = [];
+    var qq = [], element = {};
+
+
+
+
+
     ques.find({}).then(pdata => {
-        qq = pdata;
-        console.log(qq);
-        console.log("survey");
-        res.render('survey.ejs', { ques: qq });
+        ques.findOne({ "ques_txt": "Enter your age" }).then(data => {
+            console.log("entered")
+            element = data;
+            console.log(element);
+            qq = pdata;
+            // console.log(qq);
+            qq.splice(2, 0, element);
+            qq.join();
+            qq.pop();
+            console.log("survey-------------------------------------------------");
+            console.log(qq);
+            console.log("survey");
+            res.render('survey.ejs', { ques: qq });
+        });
+
     });
 
 })
@@ -544,3 +560,4 @@ app.listen(PORT, () => {
 //     options: ["Below 18", "18-25", "25-40", "Above 40"],
 //     multi_correct: false
 // })
+// _id:"647df0ee2c1ae3982f81eef3"
