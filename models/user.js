@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema({
     survey_data: [[String]],
-    date: String
+    date: String,
+    dis: String
 });
 
 module.exports = mongoose.model('user', UserSchema)

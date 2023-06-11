@@ -133,20 +133,26 @@ app.get('/admin', (req, res) => {
                         }
                     }
 
-                    if (uarr[0] === "647cd475f22afe1044988277") {
-                        var x = Object.keys(pincode);
+                    // if (uarr[0] === "647cd475f22afe1044988277") {
+                    //     var x = Object.keys(pincode);
 
-                        if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
-                            if (x.indexOf(uarr[1]) === -1) {
-                                let p = uarr[1];
-                                pincode[p] = 1;
-                            } else {
-                                let p = uarr[1];
-                                pincode[p] = pincode[p] + 1;
-                            }
-                        }
+                    //     if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                    //         // var district="";
+                    //         // if(uarr[1]>)
+                    //         // if (x.indexOf(district) === -1) {
+                    //         //     pincode[district] = 1;
+                    //         // } else {
+                    //         //     pincode[district] = pincode[district] + 1;
+                    //         if (x.indexOf(uarr[1]) === -1) {
+                    //             let p = uarr[1];
+                    //             pincode[p] = 1;
+                    //         } else {
+                    //             let p = uarr[1];
+                    //             pincode[p] = pincode[p] + 1;
+                    //         }
+                    //     }
 
-                    }
+                    // }
                     if (uarr[0] === "64847ef11fb117ab8728cd6d") {
                         var x3 = Object.keys(ageobj);
                         if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
@@ -201,6 +207,22 @@ app.get('/admin', (req, res) => {
                     }
 
                 })
+
+                var x = Object.keys(pincode);
+                var dis = users.dis;
+                if (users.dis !== undefined) {
+                    if (x.indexOf(dis) === -1) {
+                        pincode[dis] = 1;
+                    } else {
+                        pincode[dis] = pincode[dis] + 1;
+                    }
+                }
+
+
+
+
+
+
             })
             let sortable = [];
             for (var vehicle in addcloud) {
@@ -522,22 +544,59 @@ app.post('/survey', urlencodedParser, (req, res) => {
     var values = Object.values(params);
     var i = 0;
     var arr = []
-
+    var pincode = 0;
     keys.forEach(key => {
         if (key === "647cd4419731782982ad9882") {
             let encodedValue = btoa(values[i]);
             arr.push([key, encodedValue]);
-            i++;
+
         } else {
             arr.push([key, values[i]]);
-            i++;
+
         }
+        if (key == "647cd475f22afe1044988277") {
+            pincode = values[i];
+        }
+        i++;
 
     })
+    var x = "";
+    if (pincode >= "686102" && pincode <= "690572") {
+        x = "Alappuzha";
+    } else if (pincode >= "680667" && pincode <= "686693") {
+        x = "Ernakulam";
+    } else if (pincode >= "685501" && pincode <= "686514") {
+        x = "Idukki";
+    } else if (pincode >= "670001" && pincode <= "673316") {
+        x = "Kannur";
+    } else if (pincode >= "670511" && pincode <= "671552") {
+        x = "Kasargod";
+    } else if (pincode >= "689695" && pincode <= "691602") {
+        x = "Kollam";
+    } else if (pincode >= "686001" && pincode <= "686653") {
+        x = "Kottayam";
+    } else if (pincode >= "673001" && pincode <= "673661") {
+        x = "Kozhikode";
+    } else if (pincode >= "673314" && pincode <= "679591") {
+        x = "Malappuram";
+    } else if (pincode >= "678001" && pincode <= "679554") {
+        x = "Palakkad";
+    } else if (pincode >= "685533" && pincode <= "691556") {
+        x = "Pathanamthitta";
+    } else if (pincode >= "695001" && pincode <= "695615") {
+        x = "Thiruvananthapuram";
+    } else if (pincode >= "679105" && pincode <= "680751") {
+        x = "Thrissur";
+    } else if (pincode >= "670644" && pincode <= "673596") {
+        x = "Wayanad";
+    } else {
+        x = "Others";
+    }
     console.log(params);
     user.create({
         survey_data: arr,
-        date: new Date().toLocaleDateString()
+        date: new Date().toLocaleDateString(),
+        dis: x
     })
     console.log("post survey--------------------")
     user.find({}).then(pdata => {
@@ -567,3 +626,9 @@ app.listen(PORT, () => {
 //     multi_correct: false
 // })
 // _id:"647df0ee2c1ae3982f81eef3"
+// user.find({}).then(pdata => {
+//     ans = pdata
+//     console.log(ans);
+//     var total = ans.length;
+//     res.render('after_survey.ejs', { total });
+// })
