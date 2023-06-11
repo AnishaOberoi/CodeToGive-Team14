@@ -152,3 +152,6 @@ document.getElementById("ibutton").addEventListener("click", survey_redirect);
 
 
 
+document.getElementById("owl-dot").addEventListener("click", (e) => {
+    e.preventDefault();
+})

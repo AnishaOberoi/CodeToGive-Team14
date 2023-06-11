@@ -1941,3 +1941,11 @@ h1.kreep:hover {
 #navbar-button-1::before{
     background: transparent;
 }
+.owl-next, .owl-prev{
+	--color:rgb(255,255,255,0);
+}
+.owl-dots{
+	display: none;
+	width: 0;
+	height: 0;
+}
