@@ -84,7 +84,49 @@
 
 
             <div class="container">
-                <h2>Survey</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Survey</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="help" id="help">
+                            <a href="#">
+                                <button class="help-btn">Help</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="myAlert" class="alert alert-danger collapse">
+
+
+                    <strong>DICTIONARY MEANINGS</strong>
+                    <a href="#" class="closebtn" onclick="this.parentElement.style.display='none';">&times; </a>
+                    <p><strong>Caffine:</strong> Caffeine is a drug that increases the activity of your brain and
+                        nervous system. Caffeine is found in many drinks such as coffee, tea, soft drinks and energy
+                        drinks</p>
+                    <p><strong>Alcohol:</strong> A chemical substance found in drinks such as beer, wine, and liquor. It
+                        is also found in some medicines, mouthwashes, household products.</p>
+                    <p><strong>Nicotine:</strong> Nicotine is a substance found in all tobacco products and some
+                        e-cigarette liquids. It is a highly addictive substance found in the tobacco plant.</p>
+                    <p><strong>Cannabis:</strong> Cannabis, also known as marijuana among other names, is a psychoactive
+                        drug from the cannabis plant.</p>
+                    <p><strong>Hallucinogens:</strong> Hallucinogens are a type of drug that changes a person's
+                        perception of reality. Also known as 'psychedelic drugs', hallucinogens make a person see, feel
+                        and hear things that aren't real, or distort their interpretation of what's going on around
+                        them.</p>
+                    <p><strong>Sedatives:</strong> A sedative or tranquilliser is a substance that induces sedation by
+                        reducing irritability or excitement. They are CNS depressants and interact with brain activity
+                        causing its deceleration.</p>
+                    <p><strong>Dependency:</strong> It is the state of relying on or being controlled by someone or
+                        something else.</p>
+                    <p><strong>Reliance:</strong> It is the state of depending on or trusting in something or someone
+                    </p>
+                    <p><strong>Compelled:</strong> It is to drive or urge forcefully or irresistibly</p>
+                    <p><strong>Indulge:</strong> It is to allow yourself or another person to have something enjoyable,
+                        especially more than is good for you</p>
+                </div>
 
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
@@ -155,16 +197,15 @@
 
 
             </div>
-            <div class="help">
-                <a href="#">
-                    <button class="help-btn">Help</button>
-                </a>
-            </div>
+
 
         </div>
     </div>
 
     <%- include('partials/footer') %>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
         <script src="./survey.js"></script>
         <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
         <script>

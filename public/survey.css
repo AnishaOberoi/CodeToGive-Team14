@@ -91,3 +91,20 @@ li{
     background: #620d0d;
     transition:  0s;
    }
+
+   .hidden{
+	display: none;
+}
+
+.closebtn{
+    float: right;
+    --color: #620d0d;
+    
+}
+.help-btn{
+    margin-top: 0;
+    background-color:white;
+}
+.help{
+    padding-left: 5rem;
+}
