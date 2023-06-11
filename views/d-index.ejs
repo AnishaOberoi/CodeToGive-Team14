@@ -5,8 +5,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+
   <title>Dashboard</title>
 
   <meta name="description" content="" />
@@ -153,11 +155,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" target="_blank" href="/reset">Reset Password</a>
           </li>
-          <!-- <li class="nav-item">
-            <form id="logoutForm" action="/admin" method="POST">
-              <input type="submit" id="okbtn" value="Logout" class="btn" />
-            </form>
-          </li> -->
+
         </ul>
         <div class="d-flex">
           <span class="nav-item" id="login">
@@ -169,6 +167,40 @@
       </div>
     </div>
   </nav>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="logo">
+        <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png" alt="" max-width="400"
+          max-height="70" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" target="_blank" href="report">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" target="_blank" href="/reset">Reset Password</a>
+          </li>
+
+        </ul>
+        <div class="d-flex">
+          <span class="nav-item" id="login">
+            <form id="logoutForm" action="/admin" method="POST">
+              <input type="submit" id="okbtn" class="btn btn-danger ok" value="Logout" class="btn" />
+            </form>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav> -->
   <!-- 
 
         <nav
@@ -752,16 +784,17 @@
     <!-- / Content -->
 
     <!-- Footer -->
-    <footer class="content-footer footer bg-footer-theme">
+    <!-- <footer class="content-footer footer bg-footer-theme">
       <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
         <div class="mb-2 mb-md-0">
         </div>
 
       </div>
-    </footer>
-    <!-- / Footer -->
+    </footer> -->
+    <%- include('partials/footer') %>
+      <!-- / Footer -->
 
-    <div class="content-backdrop fade"></div>
+      <div class="content-backdrop fade"></div>
   </div>
   <!-- Content wrapper -->
   </div>
@@ -779,7 +812,7 @@
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
   <script src="d-jquery.js"></script>
-  <script src="d-bootstrap.js"></script>
+  <!-- <script src="d-bootstrap.js"></script> -->
   <script src="d-menu.js"></script>
   <script src="d-index.html"></script>
   <script src="index.js"></script>
@@ -847,13 +880,17 @@
     color: black;
   }
 
+  .hide {
+    display: none;
+  }
+
   @media screen and (max-width: 767px) {
     .navbar-collapse {
       margin-left: 70px;
     }
   }
 </style>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -862,6 +899,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="disclaimer.js"></script>
+<script src="script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+  var pl = document.getElementsByClassName("navbar-collapse")[0];
+  navbar - button - 1
+  pl.addEventListener("click", (e) => {
+    var x = document.getElementsByID("navbar-button-1");
+    if (x.aria - expanded === true) {
+      document.getElementById(navbar - button - 1).setAttribute('aria-expanded', 'false');
+    } else {
+      document.getElementById(navbar - button - 1).setAttribute('aria-expanded', 'true');
+    }
+
+  })
+  // const navLinks = document.querySelectorAll('.nav-item')
+  // const menuToggle = document.getElementById('navbarSupportedContent')
+  // const bsCollapse = new bootstrap.Collapse(menuToggle)
+  // navLinks.forEach((l) => {
+  //   l.addEventListener('click', () => { bsCollapse.toggle() })
+  // })
+</script>
 
 </html>
