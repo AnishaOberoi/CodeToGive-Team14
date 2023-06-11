@@ -62,6 +62,10 @@ function disableEnterKey(event) {
         return false;
     }
 }
-
+$(document).ready(function () {
+    $('#help').click(function () {
+        $('#myAlert').show('fade');
+    })
+})
 
 
