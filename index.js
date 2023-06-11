@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
         var total = ans.length;
         res.render('main.ejs', { total });
     })
+
 })
 var u = ["admin1", "admin2", "admin3"];
 var p = ["breads", "breads", "breads"];

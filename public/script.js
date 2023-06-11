@@ -115,7 +115,7 @@ window.onload = typeWriter();
 function login() {
     var alertmsg = document.getElementById('alertt');
     var okbtn = document.getElementById('okbtn');
-    var survey = document.getElementById('ibutton');
+    var survey = document.getElementById('openPromptButton');
     var form = document.getElementById('form');
     survey.classList.add('hidden');
     alertmsg.classList.remove('hidden');
