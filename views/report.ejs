@@ -62,7 +62,79 @@
             </nav>
 
 
+            <section class="all-report">
+                <h1>All Users Report</h1>
+                <div class="allexport-button">
+                    <button id="allexportButton">Export to Excel</button>
+                </div>
 
+                <table id="allTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Name</th>
+                            <th>Pincode</th>
+                            <th>District</th>
+                            <th>Age</th>
+                            <th>Know what addiction is</th>
+                            <th>Type of Addiction</th>
+                            <th>Feelings experienced</th>
+                            <th>Dependency on substance</th>
+                            <th>How likely you are accepting a substance</th>
+                            <th>Feel stressed</th>
+                            <th>Experienced difficulties in controlling yourself?</th>
+                            <th>Do you know any people in these substances?</th>
+                            <th>Willing for Counselling</th>
+                            <th>Willing to Volunteer</th>
+                            <th>Contact</th>
+                            <th>Prefered Timings</th>
+                            <th>Date of survey</th>
+
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% i=1; %>
+                            <%all.forEach(function (survey) { %>
+                                <% var keys=Object.keys(survey);%>
+                                    <% var
+                                        heads=["name","pincode","dis","age","know","add","feel","dependence","scale","stressed","control","others","vol","cou","contact","timings","date"];
+                                        %>
+                                        <% var val=Object.values(survey);%>
+                                            <!-- <%= keys%>
+                                                <%= val%>
+                                                    <%= heads%> -->
+                                            <tr>
+                                                <td>
+                                                    <%=i%>
+                                                        <%i=i+1%>
+
+
+                                                </td>
+                                                <%heads.forEach(function (head) {%>
+                                                    <%if(keys.indexOf(head)==-1){%>
+                                                        <td>
+                                                            <%=""%>
+                                                        </td>
+                                                        <%}else{%>
+                                                            <td>
+                                                                <%=survey[head]%>
+                                                            </td>
+                                                            <%}%>
+
+                                                                <% });%>
+                                            </tr>
+
+                                            <%});%>
+
+                    </tbody>
+                </table>
+
+
+            </section>
 
             <section class="volunteer-report">
                 <h1>Volunteer</h1>
@@ -73,7 +145,7 @@
                 <table id="volunteerTable">
                     <thead>
                         <tr>
-                            <th>S No.</th>
+                            <th>Sr. No.</th>
                             <th>Name</th>
                             <th>Contact</th>
                             <th>Preffered Timings</th>
@@ -117,7 +189,7 @@
                 <table id="counselTable">
                     <thead>
                         <tr>
-                            <th>S No.</th>
+                            <th>Sr. No.</th>
                             <th>Name</th>
                             <th>Contact</th>
                             <th>Preffered Timings</th>
@@ -154,78 +226,7 @@
 
 
 
-            <section class="all-report">
-                <h1>All Users Report</h1>
-                <div class="allexport-button">
-                    <button id="allexportButton">Export to Excel</button>
-                </div>
 
-                <table id="allTable" style="display: none;">
-                    <thead>
-                        <tr>
-                            <th>S No.</th>
-                            <th>Name</th>
-                            <th>Pincode</th>
-                            <th>Age</th>
-                            <th>Know what addiction is</th>
-                            <th>Type of Addiction</th>
-                            <th>Feelings experienced</th>
-                            <th>Dependency on substance</th>
-                            <th>How likely you are accepting a substance</th>
-                            <th>Feel stressed</th>
-                            <th>Experienced difficulties in controlling yourself?</th>
-                            <th>Do you know any people in these substances?</th>
-                            <th>Willing for Counselling</th>
-                            <th>Willing to Volunteer</th>
-                            <th>Contact</th>
-                            <th>Prefered Timings</th>
-                            <th>Date of survey</th>
-
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <% i=1; %>
-                            <%all.forEach(function (survey) { %>
-                                <% var keys=Object.keys(survey);%>
-                                    <% var
-                                        heads=["name","pincode","age","know","add","feel","dependence","scale","stressed","control","others","vol","cou","contact","timings","date"];
-                                        %>
-                                        <% var val=Object.values(survey);%>
-                                            <!-- <%= keys%>
-                                                <%= val%>
-                                                    <%= heads%> -->
-                                            <tr>
-                                                <td>
-                                                    <%=i%>
-                                                        <%i=i+1%>
-
-
-                                                </td>
-                                                <%heads.forEach(function (head) {%>
-                                                    <%if(keys.indexOf(head)==-1){%>
-                                                        <td>
-                                                            <%=""%>
-                                                        </td>
-                                                        <%}else{%>
-                                                            <td>
-                                                                <%=survey[head]%>
-                                                            </td>
-                                                            <%}%>
-
-                                                                <% });%>
-                                            </tr>
-
-                                            <%});%>
-
-                    </tbody>
-                </table>
-
-
-            </section>
 
 
         </div>

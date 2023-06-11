@@ -491,6 +491,7 @@ app.get('/report', (req, res) => {
             allobj.date = users.date;
             allobj.feel = feel;
             allobj.add = add;
+            allobj.dis = users.dis;
             if (flag_vol === 1) {
                 volunteer.push(obj);
             }
