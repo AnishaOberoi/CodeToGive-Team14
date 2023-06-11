@@ -100,7 +100,7 @@
                                 <%=element.ques_txt%>
                             </p>
                             <% if(element.options===null || element.options.length===0){ %>
-                                <input type="text" name="<%=element._id%>" placeholder="Write your Answer..."
+                                <input type="text" name="<%=element._id%>" onkeydown="disableEnterKey(event)" placeholder="Write your Answer..."
                                     class="form-control">
                                 <%}else if(element.multi_correct===true){ %>
 
@@ -116,7 +116,7 @@
                                             </div>
                                             <%}else{%>
                                                 <lable>Others:</lable>
-                                                <input type="text" name="<%=element._id%>"
+                                                <input type="text" name="<%=element._id%>" onkeydown="disableEnterKey(event)"
                                                     placeholder="Write your Answer..." class="form-control">
                                                 <% }%>
                                                     <%}) %>
