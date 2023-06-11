@@ -1841,7 +1841,7 @@ h1.kreep:hover {
     font-weight: bold;
 }
 .what_text::after {
-    /* content: ''; */
+    
     position: absolute;
     background-color: #000;
     width: 500px;

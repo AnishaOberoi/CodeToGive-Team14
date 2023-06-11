@@ -79,142 +79,142 @@ app.post('/admin', urlencodedParser, (req, res) => {
 app.get('/admin', (req, res) => {
     // const json = res.json();
 
-    // var i = 0;
-    // store.each(function (value, key) {
-    //     console.log(key, '==', value);
-    //     i = 1;
-    // })
-    // console.log("admin");
-    // if (i != 1) {
-    //     res.send("<h1>Bad Request</h1>");
-
-    // } else {
-    user.find({}).then(pdata => {
-        ans = pdata
-        console.log(ans);
-        var volyes = 0;
-        var colyes = 0;
-        var know = 0;
-        var total = ans.length;
-        console.log(total);
-        var pincode = {};
-        var addcloud = {};
-        var add = ["Electronics", "Alcohol", "Drugs", "Nicotine"];
-        var feel = ["Helpless", "Depressed", "Anxious", "Stressed"];
-        var feelfreq = [0, 0, 0, 0];
-        var addfreq = [0, 0, 0, 0];
-        var ageobj = {};
-
-        ans.forEach(users => {
-            var surveydata = users.survey_data;
-
-            surveydata.forEach(uarr => {
-                if (uarr[0] === "64804ba68eef5d647bbc8823") {
-                    if (uarr[1] === "Yes") {
-                        volyes++;
-                    }
-                }
-                if (uarr[0] === "64804b8e9db806247b9ec744") {
-                    if (uarr[1] === "Yes") {
-                        colyes++;
-                    }
-                }
-                if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
-                    if (uarr[1] === "yes") {
-                        know++;
-                    }
-                }
-
-                if (uarr[0] === "647cd475f22afe1044988277") {
-                    var x = Object.keys(pincode);
-
-                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
-                        if (x.indexOf(uarr[1]) === -1) {
-                            let p = uarr[1];
-                            pincode[p] = 1;
-                        } else {
-                            let p = uarr[1];
-                            pincode[p] = pincode[p] + 1;
-                        }
-                    }
-
-                }
-                if (uarr[0] === "64847ef11fb117ab8728cd6d") {
-                    var x3 = Object.keys(ageobj);
-                    // console.log(uarr[1] + " age");
-                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
-                        // console.log(uarr[1] + " age");
-                        if (x3.indexOf(uarr[1]) === -1) {
-                            // console.log(uarr[1] + " age");
-                            let p3 = uarr[1];
-                            ageobj[p3] = 1;
-                        } else {
-                            let p3 = uarr[1];
-                            ageobj[p3] = ageobj[p3] + 1;
-                        }
-                    }
-
-                }
-                if (uarr[0] === "video games" || uarr[0] === "internet") {
-                    addfreq[0]++;
-                }
-                if (uarr[0] === "alcohol") {
-                    addfreq[1]++;
-                }
-                if (uarr[0] === "hallucinogens" || uarr[0] === "sedatives" || uarr[0] === "cannabis") {
-                    addfreq[2]++;
-                }
-                if (uarr[0] === "nicotine") {
-                    addfreq[3]++;
-                }
-
-                if (uarr[0] === "Helpless") {
-                    feelfreq[0]++;
-                }
-                if (uarr[0] === "Depressed") {
-                    feelfreq[1]++;
-                }
-                if (uarr[0] === "Anxious") {
-                    feelfreq[2]++;
-                }
-                if (uarr[0] === "Stressed") {
-                    feelfreq[3]++;
-                }
-                if (uarr[0] === "6480479658c660399aa8ea4f") {
-                    var x2 = Object.keys(addcloud);
-
-                    if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
-                        var text = uarr[1].toLowerCase();
-                        text = text.charAt(0).toUpperCase() + text.slice(1);
-                        if (x2.indexOf(text) === -1) {
-                            let p2 = text;
-                            addcloud[p2] = 1;
-                        } else {
-                            let p2 = text;
-                            addcloud[p2] = addcloud[p2] + 1;
-                        }
-                    }
-
-                }
-
-            })
-        })
-        var pin = Object.keys(pincode);
-        var pinfreq = Object.values(pincode);
-        var addclouda = Object.keys(addcloud);
-        var addcloudafreq = Object.values(addcloud);
-        var age = Object.keys(ageobj);
-        var agefreq = Object.values(ageobj);
-        var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
-        console.log(sumFreq);
-        console.log(addclouda, addcloudafreq);
-        console.log(colyes, know);
-        console.log(age, agefreq);
-        res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know, sumFreq, feel, feelfreq, age, agefreq });
-
-
+    var i = 0;
+    store.each(function (value, key) {
+        console.log(key, '==', value);
+        i = 1;
     })
-    // }
+    console.log("admin");
+    if (i != 1) {
+        res.send("<h1>Bad Request</h1>");
+
+    } else {
+        user.find({}).then(pdata => {
+            ans = pdata
+            console.log(ans);
+            var volyes = 0;
+            var colyes = 0;
+            var know = 0;
+            var total = ans.length;
+            console.log(total);
+            var pincode = {};
+            var addcloud = {};
+            var add = ["Electronics", "Alcohol", "Drugs", "Nicotine"];
+            var feel = ["Helpless", "Depressed", "Anxious", "Stressed"];
+            var feelfreq = [0, 0, 0, 0];
+            var addfreq = [0, 0, 0, 0];
+            var ageobj = {};
+
+            ans.forEach(users => {
+                var surveydata = users.survey_data;
+
+                surveydata.forEach(uarr => {
+                    if (uarr[0] === "64804ba68eef5d647bbc8823") {
+                        if (uarr[1] === "Yes") {
+                            volyes++;
+                        }
+                    }
+                    if (uarr[0] === "64804b8e9db806247b9ec744") {
+                        if (uarr[1] === "Yes") {
+                            colyes++;
+                        }
+                    }
+                    if (uarr[0] === "647df0ee2c1ae3982f81eef3") {
+                        if (uarr[1] === "yes") {
+                            know++;
+                        }
+                    }
+
+                    if (uarr[0] === "647cd475f22afe1044988277") {
+                        var x = Object.keys(pincode);
+
+                        if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                            if (x.indexOf(uarr[1]) === -1) {
+                                let p = uarr[1];
+                                pincode[p] = 1;
+                            } else {
+                                let p = uarr[1];
+                                pincode[p] = pincode[p] + 1;
+                            }
+                        }
+
+                    }
+                    if (uarr[0] === "64847ef11fb117ab8728cd6d") {
+                        var x3 = Object.keys(ageobj);
+                        // console.log(uarr[1] + " age");
+                        if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                            // console.log(uarr[1] + " age");
+                            if (x3.indexOf(uarr[1]) === -1) {
+                                // console.log(uarr[1] + " age");
+                                let p3 = uarr[1];
+                                ageobj[p3] = 1;
+                            } else {
+                                let p3 = uarr[1];
+                                ageobj[p3] = ageobj[p3] + 1;
+                            }
+                        }
+
+                    }
+                    if (uarr[0] === "video games" || uarr[0] === "internet") {
+                        addfreq[0]++;
+                    }
+                    if (uarr[0] === "alcohol") {
+                        addfreq[1]++;
+                    }
+                    if (uarr[0] === "hallucinogens" || uarr[0] === "sedatives" || uarr[0] === "cannabis") {
+                        addfreq[2]++;
+                    }
+                    if (uarr[0] === "nicotine") {
+                        addfreq[3]++;
+                    }
+
+                    if (uarr[0] === "Helpless") {
+                        feelfreq[0]++;
+                    }
+                    if (uarr[0] === "Depressed") {
+                        feelfreq[1]++;
+                    }
+                    if (uarr[0] === "Anxious") {
+                        feelfreq[2]++;
+                    }
+                    if (uarr[0] === "Stressed") {
+                        feelfreq[3]++;
+                    }
+                    if (uarr[0] === "6480479658c660399aa8ea4f") {
+                        var x2 = Object.keys(addcloud);
+
+                        if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
+                            var text = uarr[1].toLowerCase();
+                            text = text.charAt(0).toUpperCase() + text.slice(1);
+                            if (x2.indexOf(text) === -1) {
+                                let p2 = text;
+                                addcloud[p2] = 1;
+                            } else {
+                                let p2 = text;
+                                addcloud[p2] = addcloud[p2] + 1;
+                            }
+                        }
+
+                    }
+
+                })
+            })
+            var pin = Object.keys(pincode);
+            var pinfreq = Object.values(pincode);
+            var addclouda = Object.keys(addcloud);
+            var addcloudafreq = Object.values(addcloud);
+            var age = Object.keys(ageobj);
+            var agefreq = Object.values(ageobj);
+            var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
+            console.log(sumFreq);
+            console.log(addclouda, addcloudafreq);
+            console.log(colyes, know);
+            console.log(age, agefreq);
+            res.render('d-index.ejs', { volyes, total: total, pin, pinfreq, add, addfreq, addclouda, addcloudafreq, colyes, know, sumFreq, feel, feelfreq, age, agefreq });
+
+
+        })
+    }
 
 
 })
