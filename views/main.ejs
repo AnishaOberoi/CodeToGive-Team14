@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="disclaimer.css">
     <title>Home</title>
 </head>
 
@@ -81,7 +82,7 @@
             </div>
 
             <h1 class="kreep" id="kreep">
-                <button class="ibutton ibutton5" id="ibutton"><b>Take a <br>Survey</b></button>
+                <button class="ibutton ibutton5"  id="openPromptButton" onclick="openPrompt()" id="ibutton"><b>Take a <br>Survey</b></button>
             </h1>
 
 
@@ -96,10 +97,27 @@
                 <h2 class="text-center"> Determining when substance abuse has become an addiction can be complicated
                 </h2>
 
+            
                 <div class="survey">
-                    <a href="/survey">
-                        <button class="survey-btn">Take Survey</button>
+                    <a >
+                        <button class="survey-btn" id="openPromptButton" onclick="openPrompt()">Take Survey</button>
                     </a>
+                    <div id="customPrompt" class="custom-prompt">
+                        <div class="custom-prompt-content">
+                          <h2>Survey Disclaimer</h2>
+                          <br>
+                          <p><strong>"Substance abuse is wrong, but
+                            seeking help is not"</strong><br>Feel free to participate in this survey. Your data will be handled with utmost confidentiality and security.</p>
+                            <center>We have received<b style="color: #620d0d;">
+                                <%=total%>
+                            </b>responses.
+                        </center>
+                          <div class="custom-prompt-buttons">
+                            <button id="button-1" onclick="goToSurvey()">Ok</button>
+                            <button id="button-1" onclick="closePrompt()">Cancel</button>
+                          </div>
+                        </div>
+                      </div>
                 </div>
 
 
@@ -493,6 +511,7 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
         <script src="script.js"></script>
+        <script src="disclaimer.js"></script>
 </body>
 
 
