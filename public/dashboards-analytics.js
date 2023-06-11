@@ -21,10 +21,10 @@
   var pinafreq = pinfreq.split(",");
   var adda = add.split(",");
   var addfreqa = addfreq.split(",");
-  var feelfreqa= feelfreq.split(",");
+  var feelfreqa = feelfreq.split(",");
   var addfreqb = [parseInt(addfreqa[0]), parseInt(addfreqa[1]), parseInt(addfreqa[2]), parseInt(addfreqa[3])];
   var feelfreqb = [parseInt(feelfreqa[0]), parseInt(feelfreqa[1]), parseInt(feelfreqa[2]), parseInt(feelfreqa[3])];
-  
+
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
@@ -488,7 +488,7 @@
                 show: true,
                 fontSize: '0.8125rem',
                 color: axisColor,
-                label: 'Monthly',
+                label: '',
               }
             }
           }
@@ -553,7 +553,7 @@
                 show: true,
                 fontSize: '0.8125rem',
                 color: axisColor,
-                label: 'Monthly',
+                label: '',
               }
             }
           }

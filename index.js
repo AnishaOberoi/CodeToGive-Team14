@@ -196,10 +196,75 @@ app.get('/admin', (req, res) => {
 
                 })
             })
-            var pin = Object.keys(pincode);
-            var pinfreq = Object.values(pincode);
-            var addclouda = Object.keys(addcloud);
-            var addcloudafreq = Object.values(addcloud);
+            let sortable = [];
+            for (var vehicle in addcloud) {
+                sortable.push([vehicle, addcloud[vehicle]]);
+            }
+            sortable.sort(function (a, b) {
+                return a[1] - b[1];
+            });
+            let cloudobjSorted = {}
+            sortable.forEach(function (item) {
+                cloudobjSorted[item[0]] = item[1]
+            })
+            console.log(cloudobjSorted);
+            var addcloudaa = Object.keys(cloudobjSorted);
+            addcloudaa.reverse();
+            var addclouda, addcloudafreq;
+            var addcloudaafreq = Object.values(cloudobjSorted);
+            addcloudaafreq.reverse();
+            console.log(" cloudcode----------cloud");
+            console.log(addcloudaa, typeof addcloudaa);
+            console.log(addcloudaafreq, typeof addcloudaafreq);
+            if (addcloudaa.length > 8) {
+                addclouda = [...Array(8).addcloudaa()]
+                addcloudafreq = [...Array(8).addcloudaafreq()]
+            } else {
+                addclouda = addcloudaa;
+                addcloudafreq = addcloudaafreq;
+            }
+
+
+
+            let sortable2 = [];
+            for (var vehicle in pincode) {
+                sortable2.push([vehicle, pincode[vehicle]]);
+            }
+            sortable2.sort(function (a, b) {
+                return a[1] - b[1];
+            });
+            sortable2.forEach(function (arr) {
+                console.log(arr);
+            })
+            var pina = [], pinafreq = [];
+            sortable2.forEach(function (item) {
+                pina.push(item[0]);
+                pinafreq.push(item[1]);
+            })
+            var pin = [], pinfreq = [];
+
+            pina.reverse();
+            pinafreq.reverse();
+            console.log(" pincode----------pin");
+            console.log(pina, typeof pina);
+            console.log(pinafreq, typeof pinafreq);
+            if (pina.length > 7) {
+                for (var i = 0; i < 7; i++) {
+                    pin.push(pina[i]);
+                }
+                console.log(pin);
+                // pin = pina.range(7);
+                // pinfreq = [...Array(7).pinafreq()];
+                for (var i = 0; i < 7; i++) {
+                    pinfreq.push(pinafreq[i]);
+                }
+                console.log(pinfreq);
+            } else {
+                pin = pina;
+                pinfreq = pinafreq;
+            }
+
+
             // var age = Object.keys(ageobj);
             // var agefreq = Object.values(ageobj);
             var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
