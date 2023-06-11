@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <!-- <link rel="stylesheet" href="styles.css"> -->
@@ -29,7 +29,7 @@
         <div id="content">
             <div id="wrapper1">
                 <div id="content">
-                    <nav class="navbar navbar-expand-lg nav_top ">
+                    <!-- <nav class="navbar navbar-expand-lg nav_top ">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="/" id="logo">
                                 <img href="main.ejs" src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png"
@@ -45,9 +45,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#about_rr">About Us</a>
-                                    </li> -->
+                                   
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" target="_blank"
                                             href="https://breadsbangalore.org/contact">Contact Us</a>
@@ -56,11 +54,39 @@
 
                                 </ul>
                                 <div class="d-flex">
-                                    <!-- <span class="nav-item" id="login">
-                                        <a class="nav-link active me-2" aria-current="page" href="#">Login</a>
-                                    </span> -->
+                                    
                                 </div>
 
+
+                            </div>
+                        </div>
+                    </nav> -->
+                    <nav class="navbar navbar-expand-lg nav_top ">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="/" id="logo">
+                                <img src="https://breadsbangalore.org/wp-content/themes/Breads_/images/logo-wide.png"
+                                    alt="" max-width="400" max-height="70" class="d-inline-block align-text-top">
+                            </a>
+                            <button id="navbar-button-1" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul id="nav-1" class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" target="_blank"
+                                            href="https://breadsbangalore.org/">About
+                                            Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" target="_blank"
+                                            href="https://breadsbangalore.org/contact">Contact Us</a>
+                                    </li>
+                                </ul>
 
                             </div>
                         </div>
@@ -321,6 +347,12 @@
 
     .container {
         padding-bottom: 7.5rem;
+    }
+
+    @media screen and (max-width: 767px) {
+        .navbar-collapse {
+            margin-left: 70px;
+        }
     }
 </style>
 

@@ -19,3 +19,8 @@ h1, #advantages, #survey{
 	font-family: "Roboto Slab", serif;
 	font-size: 20px;
 }
+@media screen and (max-width: 767px) {
+    .navbar-collapse {
+      margin-left: 70px;
+    }
+  }
