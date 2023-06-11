@@ -100,9 +100,11 @@ app.get('/admin', (req, res) => {
             var pincode = {};
             var addcloud = {};
             var add = ["Electronics", "Alcohol", "Drugs", "Nicotine"];
+            var age = ["Below 18", "18-25", "25-40", "Above 40"];
             var feel = ["Helpless", "Depressed", "Anxious", "Stressed"];
             var feelfreq = [0, 0, 0, 0];
             var addfreq = [0, 0, 0, 0];
+            var agefreq = [0, 0, 0, 0];
             var ageobj = {};
 
             ans.forEach(users => {
@@ -141,16 +143,11 @@ app.get('/admin', (req, res) => {
                     }
                     if (uarr[0] === "64847ef11fb117ab8728cd6d") {
                         var x3 = Object.keys(ageobj);
-                        // console.log(uarr[1] + " age");
                         if (uarr[1] !== undefined && uarr[1] != null && uarr[1] !== "") {
-                            // console.log(uarr[1] + " age");
-                            if (x3.indexOf(uarr[1]) === -1) {
-                                // console.log(uarr[1] + " age");
-                                let p3 = uarr[1];
-                                ageobj[p3] = 1;
-                            } else {
-                                let p3 = uarr[1];
-                                ageobj[p3] = ageobj[p3] + 1;
+                            // console.log(uarr[1], typeof uarr[1]);
+                            // console.log(age.indexOf(uarr[1]));
+                            if (age.indexOf(uarr[1]) !== -1) {
+                                agefreq[age.indexOf(uarr[1])]++;
                             }
                         }
 
@@ -203,8 +200,8 @@ app.get('/admin', (req, res) => {
             var pinfreq = Object.values(pincode);
             var addclouda = Object.keys(addcloud);
             var addcloudafreq = Object.values(addcloud);
-            var age = Object.keys(ageobj);
-            var agefreq = Object.values(ageobj);
+            // var age = Object.keys(ageobj);
+            // var agefreq = Object.values(ageobj);
             var sumFreq = addfreq[0] + addfreq[1] + addfreq[2] + addfreq[3];
             console.log(sumFreq);
             console.log(addclouda, addcloudafreq);
