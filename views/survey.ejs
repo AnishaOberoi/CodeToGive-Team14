@@ -91,7 +91,7 @@
                         aria-valuemax="100"></div>
                 </div>
 
-                <form id="surveyForm" action="/survey" method="POST">
+                <form id="surveyForm" action="/survey" method="POST" onkeydown="return event.key != 'Enter';">
                     <% ques.forEach((element, index)=> { %>
                         <p>
                         <div class="question active" id="question1">
